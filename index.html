@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Johnny & Sarah's Honeymoon</title>
-    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;700&family=Noto+Sans+TC:wght@100;300;400;700&display=swap" rel="stylesheet">
-    <!-- React, Babel, & Lucide Icons -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
-        .font-serif { font-family: 'Noto Serif TC', serif; }
-        body, .font-sans { font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.05); } }
-        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
-        .animate-slowZoom { animation: slowZoom 8s ease-out forwards; }
-        .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        * { -webkit-tap-highlight-color: transparent; }
-        .nav-btn-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+      .font-serif { font-family: 'Noto Serif TC', serif; }
+      body, .font-sans { font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.05); } }
+      .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+      .animate-slowZoom { animation: slowZoom 8s ease-out forwards; }
+      .text-shadow { text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+      * { -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body class="bg-[#FDFCFB]">
@@ -51,9 +48,10 @@
             };
 
             const boldKeywords = [
-                "Indigo 飯店餐廳", "20:15 的飯店餐廳", "利久牛舌", "HARBS", "I'm donut ?", 
+                "Indigo 飯店餐廳", "利久牛舌", "HARBS", "I'm donut ?", 
                 "age,3", "Yellow 蛋包飯", "川上庵", "丸山咖啡", "淺野屋", "熱海布丁", 
-                "三島鰻魚飯", "櫻家", "京丸", "星野溫泉", "吉卜力美術館", "皮克斯世界展"
+                "三島鰻魚飯", "櫻家", "京丸", "星野溫泉", "吉卜力美術館", "皮克斯世界展",
+                "Tokyo DisneySea", "Tokyo Disneyland", "Believe! Sea of Dreams", "中目黑星巴克旗艦店", "Shake Shack"
             ];
 
             const renderDescription = (text) => {
@@ -84,210 +82,236 @@
                 {
                     day: 1, date: "2026.06.08 Mon", shortDate: "06.08", weekday: "Mon", title: "初抵：森林的呼吸", theme: "成田二航 ➔ 輕井澤 Indigo",
                     image: "https://images.pexels.com/photos/3017093/pexels-photo-3017093.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: null,
                     transport: [
-                        { mode: "N'EX (成田特快)", route: "成田機場(T2) ➔ 東京站", duration: "60 mins", stations: ["空港第 2 航廈", "成田", "佐倉", "四街道", "千葉", "船橋", "錦糸町", "東京站"], price: "¥3,070 (約 NT$645)", payment: "機場 B1 JR 櫃檯劃位，可刷 Visa/MasterCard。", note: "全車指定席，抵達二航後下 B1 辦理即可。" },
-                        { mode: "北陸新幹線", route: "東京站 ➔ 輕井澤站", duration: "75 mins", stations: ["東京", "上野", "大宮", "高崎", "安中榛名", "輕井澤"], price: "¥6,020 (約 NT$1,265)", payment: "售票機或 Smart EX APP。", note: "由東京站南轉乘口進入，轉乘時間建議留 20 分鐘。" }
+                        { mode: "N'EX (成田特快)", route: "成田機場(T2) ➔ 東京站", duration: "60 mins", stations: ["➊ 成田機場第 2 航廈 »", "➋ 成田 »", "➌ 佐倉 »", "➍ 四街道 »", "➎ 千葉 »", "➏ 船橋 »", "➐ 錦糸町 »", "➑ 東京站"], price: "¥3,070", payment: "機場 B1 JR 櫃檯劃位", note: "全車指定席，抵達二航後下 B1 辦理即可。" },
+                        { mode: "北陸新幹線", route: "東京站 ➔ 輕井澤站", duration: "75 mins", stations: ["➊ 東京 »", "➋ 上野 »", "➌ 大宮 »", "➍ 高崎 »", "➎ 安中榛名 »", "➏ 輕井澤"], price: "¥6,020", payment: "售票機或 Smart EX APP", note: "由東京站南轉乘口進入。" }
                     ],
-                    description: "Johnny 和 Sarah 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐。不需要奔波，只需將彼此調整到「度假模式」，在森林的呼吸聲中入眠。",
+                    description: "Johnny 和 Sarah 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐時光。",
                     spots: [
-                        { name: "成田機場第二航廈", info: "抵達並辦理 N'EX 乘車手續。", time: "15:05 落地" },
-                        { name: "東京站紅磚區", info: "文藝復興式建築，東京的永恆經典。", time: "16:30" },
-                        { name: "輕井澤車站", info: "森林之旅的入口，氛圍靜謐。", time: "17:45" },
-                        { name: "Hotel Indigo 輕井澤", info: "莫蘭迪灰綠色調的設計飯店。", time: "Check-in" },
-                        { name: "飯店餐廳預約", info: "20:15 的飯店餐廳，開啟浪漫序章。", time: "20:15" }
+                        { name: "成田機場 T2", time: "15:05 落地", info: "辦理 N'EX 指定席手續", hours: "24小時" },
+                        { name: "Hotel Indigo 輕井澤", time: "18:30 到達", info: "辦理入住與安頓行李", hours: "Check-in 15:00後" },
+                        { name: "Indigo 飯店餐廳", time: "20:15 預約", info: "KAGARIBI 炭火料理", hours: "Dinner 17:30-22:00" }
                     ],
-                    foods: ["Indigo 飯店餐廳", "信州高原牛奶", "精釀麥酒", "輕食餐盒", "輕井澤限定小食"],
+                    foods: [
+                        { name: "Indigo 飯店餐廳", hours: "17:30 - 22:00 (最後點餐 21:00)" },
+                        { name: "信州高原牛奶", hours: "Indigo 房內備品供應" }
+                    ],
                     hotel: "Hotel Indigo Karuizawa"
                 },
                 {
                     day: 2, date: "2026.06.09 Tue", shortDate: "06.09", weekday: "Tue", title: "散冊：單車上的文學", theme: "雲場池 ➔ 舊輕井澤",
                     image: "https://images.pexels.com/photos/27896698/pexels-photo-27896698.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 – 10:30 (最後入場: 10:00)",
                     transport: [
-                        { mode: "電動助動力單車", route: "輕井澤站北口周邊租借", duration: "Full Day", stations: ["車站北口", "雲場池", "舊輕井澤銀座通", "聖保羅教堂"], price: "¥1,500 - ¥2,500 (約 NT$315 - $525)", payment: "現場現金支付或 Paypay。", note: "強烈建議選電動型，讓優雅不被坡道打擾。" }
+                        { mode: "電動單車", route: "輕井澤站北口周邊", duration: "Full Day", stations: ["➊ 輕井澤車站 »", "➋ 雲場池 »", "➌ 舊輕井澤銀座通 »", "➍ 聖保羅教堂"], price: "¥2,500", payment: "現場 Paypay/現金", note: "建議 10:00 前租借，避免電動型完售。" }
                     ],
-                    description: "跨上單車，Sarah 的長裙在初夏的微風中輕輕擺動，Johnny 在身後捕捉這如電影般的瞬間。雲場池的池水呈現出一種深邃的灰綠色，池邊的倒影靜謐得讓人不忍呼吸。漫步在舊輕井澤銀座通，走進那些充滿質感的果醬老店，在聖保羅教堂的木造屋頂下，感受那份神聖而純粹的平靜。這一天，輕井澤的風、單車的齒輪聲、以及你們的笑聲，構成了最美的蜜月練習曲。",
+                    description: "跨上單車，Sarah 的長裙在初夏的微風中輕輕擺動，Johnny 在身後捕捉這如電影般的瞬間。雲場池的池水呈現出一種深邃的灰綠色，漫步在舊輕井澤銀座通，走進那些充滿質感的果醬老店。這一天，輕井澤的風與你們的笑聲，構成了最美的蜜月練習曲。",
                     spots: [
-                        { name: "雲場池", info: "被稱為天鵝湖，絕美的莫蘭迪綠湖景。", time: "10:00" },
-                        { name: "舊輕井澤銀座通", info: "文青雜貨與手工果醬的聚集地。", time: "12:00" },
-                        { name: "聖保羅天主教堂", info: "木造建築，輕井澤的靈魂景點。", time: "14:30" },
-                        { name: "蕭紀念禮拜堂", info: "隱身在森林深處的純白空間。", time: "16:00" },
-                        { name: "林蔭小道", info: "適合停下單車拍一張文青風格合照。", time: "隨時" }
+                        { name: "雲場池", time: "10:30", info: "絕美莫蘭迪綠湖景", hours: "自由開放" },
+                        { name: "舊輕井澤銀座通", time: "12:00", info: "文青雜貨與老街散步", hours: "10:00 - 18:00 (依各店)" },
+                        { name: "聖保羅天主教堂", time: "14:30", info: "木造建築地標", hours: "07:00 - 18:00" }
                     ],
-                    foods: ["淺野屋麵包", "澤屋果醬", "Mikado 摩卡霜淇淋", "茜屋精品咖啡", "腸詰屋手工香腸"],
+                    foods: [
+                        { name: "淺野屋麵包 (舊道店)", hours: "08:00 - 18:00" },
+                        { name: "澤屋果醬 (Sawaya)", hours: "09:00 - 18:00" },
+                        { name: "Mikado 摩卡霜淇淋", hours: "10:00 - 17:00" }
+                    ],
                     hotel: "Hotel Indigo Karuizawa"
                 },
                 {
                     day: 3, date: "2026.06.10 Wed", shortDate: "06.10", weekday: "Wed", title: "慢活：石之誓約", theme: "石之教堂 ➔ 榆樹街小鎮",
                     image: "https://images.pexels.com/photos/36018204/pexels-photo-36018204.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 – 10:30 (最後入場: 10:00)",
                     transport: [
-                        { mode: "星野接駁巴士", route: "輕井澤站南口 ➔ 星野區域", duration: "15 mins", stations: ["輕井澤站", "中輕井澤", "星野渡假區", "榆樹街小鎮"], price: "¥400 (約 NT$84)", payment: "Suica 或 現金。", note: "班次約每小時 1-2 班，建議先下載時刻表。" }
+                        { mode: "星野接駁巴士", route: "輕井澤站南口 ➔ 星野區域", duration: "15 mins", stations: ["➊ 輕井澤南口 »", "➋ 中輕井澤 »", "➌ 星野渡假區 »", "➍ 榆樹街小鎮"], price: "¥400", payment: "Suica 或 現金", note: "班次固定，建議先對時刻表。" }
                     ],
-                    description: "今日走入建築大師的異想世界。石之教堂將石頭、玻璃與光影交織，象徵兩人的愛情如石般堅毅、如光般剔透。隨後漫步在榆樹街小鎮，這是在樹林中搭建的木質露台。聽著身旁溪流的潺潺聲，點一杯丸山咖啡。傍晚在星野溫泉中洗去疲憊，最後以一碗熱騰騰的川上庵蕎麥麵為輕井澤之旅畫下溫柔的句點。這是一種簡約與質感的碰撞，屬於你們的慢活節奏。",
+                    description: "今日走入建築大師的異想世界。石之教堂將石頭、玻璃與光影交織，象徵兩人的愛情如石般堅毅。隨後漫步在榆樹街小鎮，聽著身旁溪流的潺潺聲，點一杯丸山咖啡。傍晚在星野溫泉中洗去疲憊，最後以一碗熱騰騰的川上庵蕎麥麵為輕井澤之旅畫下溫柔的句點。",
                     spots: [
-                        { name: "石之教堂", info: "無縫接軌自然的奇蹟建築。", time: "11:00" },
-                        { name: "星野高原教會", info: "充滿祈願與祝福的木造教堂。", time: "13:00" },
-                        { name: "榆樹街小鎮", info: "森林中15家美學店舖。", time: "14:30" },
-                        { name: "星野溫泉 蜻蜓之湯", info: "露天森林浴場。", time: "16:30" },
-                        { name: "村民食堂", info: "精緻的定食選擇。", time: "18:00" }
+                        { name: "石之教堂", time: "11:00", info: "有機建築藝術", hours: "09:00 - 18:00 (婚禮時不開放)" },
+                        { name: "榆樹街小鎮", time: "14:00", info: "木質露台森林小店", hours: "09:00 - 19:00" },
+                        { name: "星野溫泉 蜻蜓之湯", time: "16:30", info: "露天森林風呂", hours: "10:00 - 23:00 (最後入場 22:00)" }
                     ],
-                    foods: ["川上庵", "丸山咖啡", "和菓子 菜之花", "高原起司蛋糕", "純鮮乳 Gelato"],
+                    foods: [
+                        { name: "川上庵 (Kawakami-an)", hours: "11:00 - 22:00 (全天供應)" },
+                        { name: "丸山咖啡 (星野店)", hours: "08:00 - 18:00" },
+                        { name: "和菓子 菜之花", hours: "09:00 - 18:00" }
+                    ],
                     hotel: "Hotel Indigo Karuizawa"
                 },
                 {
-                    day: 4, date: "2026.06.11 Thu", shortDate: "06.11", weekday: "Thu", title: "移動：牛舌的香氣", theme: "Outlet ➔ 利久牛舌 ➔ 三島",
+                    day: 4, date: "2026.06.11 Thu", shortDate: "06.11", weekday: "Thu", title: "都會轉乘：味覺記事", theme: "Outlet ➔ 利久牛舌 ➔ 三島",
                     image: "https://images.pexels.com/photos/16700785/pexels-photo-16700785.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 – 10:30 (最後入場: 10:00)",
                     transport: [
-                        { mode: "北陸新幹線", route: "輕井澤 ➔ 東京站", duration: "75 mins", stations: ["輕井澤", "高崎", "熊谷", "大宮", "上野", "東京"], price: "¥6,020 (約 NT$1,265)", payment: "售票機購票。", note: "中午抵達東京後，直奔一番街品嚐利久牛舌。" },
-                        { mode: "東海道新幹線", route: "東京站 ➔ 三島站", duration: "55 mins", stations: ["東京", "品川", "新橫濱", "小田原", "熱海", "三島"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "選擇藍標東海道線，體驗新幹線的極速。" }
+                        { mode: "北陸新幹線", route: "輕井澤 ➔ 東京站", duration: "75 mins", stations: ["➊ 輕井澤 »", "➋ 高崎 »", "➌ 大宮 »", "➍ 上野 »", "➎ 東京"], price: "¥6,020", payment: "Smart EX", note: "建議搭乘 15:00 班次。" },
+                        { mode: "東海道新幹線", route: "東京站 ➔ 三島站", duration: "55 mins", stations: ["➊ 東京 »", "➋ 品川 »", "➌ 新橫濱 »", "➍ 熱海 »", "➎ 三島"], price: "¥4,600", payment: "Smart EX", note: "於東京站品嚐利久牛舌，再悠閒搭新幹線回三島。" }
                     ],
-                    description: "在離開輕井澤前，最後的購物衝刺留給 Outlet。午後搭上新幹線，回到樞紐東京站。這不僅是移動，更是一場味蕾的補給。Sarah 期待已久的利久牛舌，那厚實、焦香、彈牙的口感，是東京最令人懷念的味道。隨後轉乘東海道新幹線向南行駛，富士山的輪廓在夕陽中漸漸清晰。入住三島飯店，在頂樓浴場看著窗外的城市點點燈火，那是屬於蜜月中段的浪漫轉場。",
+                    description: "在離開輕井澤前，我們把大半天的時間留給 Outlet。待到 15:00 左右，搭上新幹線回到樞紐東京站。這不僅是移動，更是一場關於厚實口感的味覺饗宴。傍晚在東京站內品嚐期待已久的利久牛舌，餐後轉乘東海道新幹線，在夜色中抵達三島飯店。",
                     spots: [
-                        { name: "輕井澤王子 Outlet", info: "精品採購與最後補貨。", time: "10:00" },
-                        { name: "東京站一番街", info: "品嚐利久牛舌的最佳地點。", time: "13:30" },
-                        { name: "三島車站南口", info: "乾淨、安靜的富士門戶。", time: "16:00" },
-                        { name: "三島東急飯店", info: "極簡質感的客房。", time: "Check-in" },
-                        { name: "頂樓展望浴場", info: "享受富士山下的暖湯。", time: "21:00" }
+                        { name: "輕井澤王子 Outlet", time: "10:00 - 15:00", info: "森林系精品購物", hours: "10:00 - 19:00" },
+                        { name: "東京站一番街", time: "17:00 - 19:00", info: "利久牛舌晚餐", hours: "11:00 - 23:00 (最後點餐 22:30)" },
+                        { name: "三島東急飯店", time: "21:30", info: "頂樓展望浴場", hours: "澡堂 15:00 - 01:00" }
                     ],
-                    foods: ["利久牛舌", "三島馬鈴薯餅", "靜岡焙茶", "東京芭娜娜", "飯店特調酒品"],
+                    foods: [
+                        { name: "利久牛舌 (東京站店)", hours: "11:00 - 23:00 (無休息)" },
+                        { name: "三島馬鈴薯餅", hours: "三島站周邊名物供應" }
+                    ],
                     hotel: "富士山三島東急飯店"
                 },
                 {
-                    day: 5, date: "2026.06.12 Fri", shortDate: "06.12", weekday: "Fri", title: "神聖：箱根神社", theme: "蘆之湖 ➔ 海賊船 ➔ 大涌谷",
+                    day: 5, date: "2026.06.12 Fri", shortDate: "06.12", weekday: "Fri", title: "神戰：箱根神社", theme: "蘆之湖 ➔ 海賊船 ➔ 大涌谷",
                     image: "https://images.pexels.com/photos/10698490/pexels-photo-10698490.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 - 10:00 (最後入場: 9:30)",
                     transport: [
-                        { mode: "東海巴士 (元箱根港線)", route: "三島站南口 ➔ 元箱根港", duration: "50 mins", stations: ["三島站南口", "三島 Skywalk", "山中城跡", "箱根峠", "元箱根港"], price: "¥1,100 (約 NT$231)", payment: "Suica / 現金。", note: "飯店門口站牌上車，直達蘆之湖畔。" },
-                        { mode: "箱根海賊船", route: "元箱根港 ➔ 桃源台", duration: "30 mins", stations: ["元箱根港", "箱根町港", "桃源台港"], price: "¥1,200 (約 NT$250)", payment: "自動售票機。", note: "二樓甲板是拍富士山的絕佳位置。" }
+                        { mode: "東海巴士", route: "三島站 ➔ 元箱根港", duration: "50 mins", stations: ["➊ 三島站南口 »", "➋ 三島 Skywalk »", "➌ 山中城跡 »", "➍ 箱根峠 »", "➎ 元箱根港"], price: "¥1,100", payment: "Suica/現金", note: "飯店門口站牌上車，直達蘆之湖畔。" }
                     ],
-                    description: "今日是山與海的對話。蘆之湖的湖水藍得深邃，箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Johnny 和 Sarah 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆溫熱的黑蛋，據說能延壽七年，也就是能再陪彼此走過更多歲月。這是一場日式莊嚴與浪漫童話的結合。",
+                    description: "今日是山與海的對話。箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Johnny 和 Sarah 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆據說能延壽七年的黑蛋。",
                     spots: [
-                        { name: "箱根神社 水中鳥居", info: "水中紅色鳥居，必拍地標。", time: "10:30" },
-                        { name: "蘆之湖海賊船", info: "華麗的歐式船隻，體驗海賊浪漫。", time: "12:00" },
-                        { name: "箱根空中纜車", info: "俯瞰蘆之湖全景的最佳視擊。", time: "13:30" },
-                        { name: "大涌谷", info: "感受地殼溫度的火山景觀。", time: "15:00" },
-                        { name: "桃源台港", info: "安靜的小港口，適合漫步。", time: "16:30" }
+                        { name: "箱根神社 水中鳥居", time: "10:30", info: "水中鳥居必拍點", hours: "自由開放" },
+                        { name: "蘆之湖海賊船", time: "12:00", info: "元箱根港出發", hours: "首班 10:00 / 末班 16:30 (依官網)" },
+                        { name: "大涌谷", time: "15:00", info: "硫磺地形與黑蛋", hours: "09:00 - 16:30 (纜車時間)" }
                     ],
-                    foods: ["大涌谷黑蛋", "箱根手工蕎麥", "蘆之湖戚風蛋糕", "溫泉小饅頭", "三島在地美食"],
+                    foods: [
+                        { name: "大涌谷黑蛋 (Kuro-Tamago)", hours: "09:00 - 16:30 (依纜車)" },
+                        { name: "箱根手工蕎麥", hours: "通常在 11:00 - 15:00 供應" }
+                    ],
                     hotel: "富士山三島東急飯店"
                 },
                 {
                     day: 6, date: "2026.06.13 Sat", shortDate: "06.13", weekday: "Sat", title: "復古：熱海的午後", theme: "來宮神社 ➔ ACAO 森林",
                     image: "https://images.pexels.com/photos/31204726/pexels-photo-31204726.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 - 10:00 (最後入場: 9:30)",
                     transport: [
-                        { mode: "JR 東海道本線", route: "三島站 ➔ 熱海站", duration: "14 mins", stations: ["三島", "函南", "熱海"], price: "¥330 (約 NT$70)", payment: "Suica 直接感應。", note: "車次極多，隨到隨搭。" },
-                        { mode: "市內公車", route: "熱海站 ➔ ACAO FOREST", duration: "15 mins", stations: ["熱海站", "お宮の松", "親水公園", "ACAO FOREST"], price: "¥250/次", payment: "現金 / Suica。", note: "巴士沿著熱海灣行駛，海景非常開闊。" }
+                        { mode: "JR 東海道本線", route: "三島站 ➔ 熱海站", duration: "14 mins", stations: ["➊ 三島 »", "➋ 函南 »", "➌ 熱海"], price: "¥330", payment: "Suica 感應", note: "區間車極多，免預約。" },
+                        { mode: "熱海市內公車", route: "熱海站 ➔ ACAO", duration: "15 mins", stations: ["➊ 熱海站 »", "➋ お宮の松 »", "➌ 親水公園 »", "➍ ACAO FOREST"], price: "¥250", payment: "現金 / Suica", note: "巴士沿海岸行駛，海景開闊。" }
                     ],
-                    description: "熱海，一個讓時間慢下來的濱海城市。先在來宮神社的大樟樹下繞行，為這段婚姻祈求長久的福份。接著前往 ACAO FOREST，這是一個建在懸崖邊的花園，隈研吾設計的 COEDA HOUSE 咖啡廳完全由木榫接而成，從玻璃窗望出去，大海與森林交織成最優雅的背景。下午在親水公園走走，喝一瓶復古的熱海布丁，那種微甜的滋味，就是這趟旅程最溫柔的點綴。",
+                    description: "熱海，一個讓時間慢下來的濱海城市。先在來宮神社的大樟樹下繞行，接著前往 ACAO FOREST，這是一個建在懸崖邊的花園，從 COEDA HOUSE 咖啡廳望出去，大海與森林交織成最優雅的背景。下午喝一瓶復古的熱海布丁，感受微甜的滋味。",
                     spots: [
-                        { name: "來宮神社", info: "2000 年神木，熱海最強能量點。", time: "09:30" },
-                        { name: "ACAO FOREST", info: "世界級建築師隈研吾打造的空中花園。", time: "11:00" },
-                        { name: "COEDA HOUSE", info: "絕美海景咖啡廳，拍照首選。", time: "13:00" },
-                        { name: "熱海親水公園", info: "蔚藍海岸與白色長廊。", time: "15:00" },
-                        { name: "熱海銀座商店街", info: "尋找熱海布丁與懷舊老街氣息。", time: "16:30" }
+                        { name: "來宮神社", time: "09:30", info: "2000年神木能量點", hours: "09:00 - 17:00" },
+                        { name: "ACAO FOREST", time: "11:00", info: "空中花園與海景鞦韆", hours: "09:00 - 17:00 (最後點餐 16:00)" },
+                        { name: "COEDA HOUSE", time: "13:00", info: "隈研吾設計咖啡廳", hours: "09:30 - 16:00" }
                     ],
-                    foods: ["熱海布丁", "伊豆海鮮丼", "COEDA 特調飲品", "靜岡煎茶", "熱海小吃"],
+                    foods: [
+                        { name: "熱海布丁 (銀座店)", hours: "10:00 - 18:00" },
+                        { name: "伊豆海鮮丼", hours: "11:30 - 15:00 / 17:00 - 20:00 (午休)" }
+                    ],
                     hotel: "富士山三島東急飯店"
                 },
                 {
-                    day: 7, date: "2026.06.14 Sun", shortDate: "06.14", weekday: "Sun", title: "轉身：夢幻的世界", theme: "三島慢活 ➔ 迪士尼大倉",
+                    day: 7, date: "2026.06.14 Sun", shortDate: "06.14", weekday: "Sun", title: "轉段：夢幻的開端", theme: "三島慢活 ➔ 迪士尼大倉",
                     image: "https://images.pexels.com/photos/31223301/pexels-photo-31223301.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Breakfast: 6:30 - 10:00 (最後入場: 9:30)",
                     transport: [
-                        { mode: "新幹線 + JR 京葉線", route: "三島 ➔ 東京 ➔ 舞濱", duration: "90 mins", stations: ["三島", "熱海", "小田原", "新橫濱", "品川", "東京站", "舞濱"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "東京站轉乘京葉線路程較長，建議預留 15 分鐘步行。" }
+                        { mode: "新幹線 + JR 京葉線", route: "三島 ➔ 東京 ➔ 舞濱", duration: "90 mins", stations: ["➊ 三島 »", "➋ 熱海 »", "➌ 小田原 »", "➍ 新橫濱 »", "➎ 品川 »", "➏ 東京 »", "➐ 舞濱"], price: "¥4,600", payment: "Smart EX", note: "直達東京後轉乘京葉線。" }
                     ],
-                    description: "在離開靜岡前，我們要把早晨留給源兵衛川。踩在清澈湧泉中的石板路上，看著水草隨波擺動，這是三島最溫柔的模樣。中午吃一頓道地的三島鰻魚飯，推薦前往櫻家或京丸。那份細膩與甘甜，會永遠留在你們的味蕾記憶中。帶著富士山的祝福，我們向夢幻的世界進發。當列車抵達舞濱站，迪士尼樂園的城堡映入眼簾。今晚早點休息，夢境即將成真。",
+                    description: "在離開靜岡前，我們要把早晨留給源兵衛川。踩在清澈湧泉中的石板路上，看著水草隨波擺動。中午吃一頓道地的三島鰻魚飯，帶著富士山的祝福，我們向夢幻的世界進發。當列車抵達舞濱站，今晚入住經典的大倉飯店，夢境即將成真。",
                     spots: [
-                        { name: "三島 Skywalk", info: "全日最長吊橋，眺望富士全景。", time: "09:30" },
-                        { name: "源兵衛川", info: "清泉中散步的極致體驗。", time: "12:00" },
-                        { name: "三嶋大社", info: "莊嚴的守護神殿。", time: "14:30" },
-                        { name: "迪士尼單軌電車", info: "奇幻旅程的正式起點。", time: "20:00" },
-                        { name: "Hotel Okura Tokyo Bay", info: "優雅而平穩的住宿選擇。", time: "Check-in" }
+                        { name: "三島 Skywalk", time: "09:30", info: "日本最長大吊橋", hours: "09:00 - 17:00" },
+                        { name: "源兵衛川", time: "12:00", info: "湧泉水上步道", hours: "自由開放" },
+                        { name: "三嶋大社", time: "14:30", info: "伊豆國第一之宮", hours: "08:30 - 17:00" }
                     ],
-                    foods: ["三島鰻魚飯", "櫻家", "京丸", "迪士尼甜甜圈", "大倉飯店早餐"],
+                    foods: [
+                        { name: "櫻家 / 京丸 (鰻魚飯)", hours: "11:00 - 15:30 (休息) 17:00 - 19:30" },
+                        { name: "大倉飯店法式吐司", hours: "隔日早餐提供" }
+                    ],
                     hotel: "Hotel Okura Tokyo Bay"
                 },
                 {
-                    day: 8, date: "2026.06.15 Mon", shortDate: "06.15", weekday: "Mon", title: "夢想：回到純真", theme: "Tokyo Disneyland 全日",
+                    day: 8, date: "2026.06.15 Mon", shortDate: "06.15", weekday: "Mon", title: "海洋：碧藍的夢想", theme: "Tokyo DisneySea 全日",
                     image: "https://images.pexels.com/photos/10997649/pexels-photo-10997649.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Room Only / 不含早餐",
                     transport: [
-                        { mode: "飯店接駁巴士", route: "飯店 ➔ 樂園門口", duration: "5 mins", stations: ["飯店門口", "迪士尼單軌站", "東京迪士尼樂園站"], price: "Free", payment: "不需支付。", note: "接駁巴士班次頻密，非常方便。" }
+                        { mode: "渡假區巡迴巴士", route: "飯店 ➔ DisneySea 門口", duration: "10 mins", stations: ["➊ 飯店門口 »", "➋ 迪士尼海洋站門口"], price: "Free", payment: "飯店房客專屬", note: "建議提早 40 分鐘前往門口排隊。" }
                     ],
-                    description: "今天是屬於夢想的一天。東京迪士尼樂園是一個能讓所有大人變回孩子的地方。蜜月的意義之一，就是找回兩個人最初的純真。在美麗的仙杜瑞拉城堡前擁抱拍照，或是坐上小熊維尼獵蜜記體驗那份甜蜜。下午時分，買個吉拿棒，在長椅上看著 world 各地的笑容。晚上一定要留下來看煙火與燈光秀，當璀璨的光芒劃破夜空，兩個人並肩站著，那一刻會覺得，未來的日子只要有彼此，就像這場煙火一樣閃耀。",
+                    description: "蜜月的第一場奇幻之旅從 Tokyo DisneySea 開始。海洋樂園擁有全球獨有的精緻氛圍。千萬別錯過夜晚震撼人心的 Believe! Sea of Dreams 燈光秀，那是結合投影、雷射與水幕的視覺奇蹟，在璀璨中為今天劃下句點。",
                     spots: [
-                        { name: "仙杜瑞拉城堡", info: "樂園永恆的中心與背景。", time: "全天" },
-                        { name: "美女與野獸 城堡奇緣", info: "熱門首選，建議購買 DPA 省時。", time: "全天" },
-                        { name: "小小世界", info: "溫馨的室內乘船旅行。", time: "全天" },
-                        { name: "世界市集", info: "充滿復古風格的商店街。", time: "全天" },
-                        { name: "夜間電子大遊行", info: "絕美燈光秀，迪士尼最浪漫的一刻。", time: "19:30" }
+                        { name: "地中海港灣", time: "全天", info: "歐式建築群表演", hours: "09:00 - 21:00" },
+                        { name: "Believe! Sea of Dreams", time: "19:40 (依季節)", info: "絕美海洋燈光秀", hours: "每日演出時間請查官網" },
+                        { name: "翱翔：騰空志願", time: "全天", info: "4D 飛行體驗(必玩)", hours: "09:00 - 21:00" }
                     ],
-                    foods: ["米奇鬆餅", "燻雞火雞腿", "吉拿棒", "藍海灣餐廳", "爆米花桶"],
+                    foods: [
+                        { name: "麥哲倫餐廳", hours: "11:00 - 19:30 (全時段預約制)" },
+                        { name: "三眼怪麻糬", hours: "10:00 - 18:00 (園內攤販供應)" }
+                    ],
                     hotel: "Hotel Okura Tokyo Bay"
                 },
                 {
-                    day: 9, date: "2026.06.16 Tue", shortDate: "06.16", weekday: "Tue", title: "海洋：冒險之夜", theme: "Tokyo DisneySea ➔ 大井町",
+                    day: 9, date: "2026.06.16 Tue", shortDate: "06.16", weekday: "Tue", title: "陸地：回歸純真", theme: "Tokyo Disneyland ➔ 大井町",
                     image: "https://images.pexels.com/photos/28505388/pexels-photo-28505388.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Room Only / 不含早餐",
                     transport: [
-                        { mode: "JR 京葉線 + 京濱東北線", route: "舞濱 ➔ 東京 ➔ 大井町", duration: "40 mins", stations: ["舞濱", "新木場", "東京站", "品川", "大井町"], price: "¥310 (約 NT$65)", payment: "Suica 直接感應。", note: "轉乘時注意 JK 藍標線路。" }
+                        { mode: "渡假區單軌電車", route: "飯店 ➔ 東京 ➔ 大井町", duration: "40 mins", stations: ["➊ 海濱站 »", "➋ 舞濱 »", "➌ 東京 »", "➍ 大井町"], price: "¥310", payment: "Suica", note: "樂園結束後，至東京站轉京濱東北線。" }
                     ],
-                    description: "DisneySea 是為成年人設計的浪漫冒險。地中海港灣的威尼斯貢多拉，讓 Johnny 載著 Sarah 悠遊在運河中，聽著船夫的歌聲。黃昏時分，當阿拉伯海岸的燈火亮起，整座樂園變成了成人專屬的奇幻夢境。晚餐後，我們告別魔法王國，回到生活機能極佳的大井町。這裡的街道更有煙火氣，也是蜜月最後一段行程的安靜據點。這兩天的夢幻，將成為你們一輩子珍藏的膠捲。",
+                    description: "Tokyo Disneyland 是一個能讓所有大人變回孩子的地方。在美麗的仙杜瑞拉城堡前擁抱拍照，坐上小熊維尼獵蜜記體驗那份甜蜜。晚上看著電子大遊行，那一刻會覺得，未來的日子只要有彼此，就像這場煙火一樣閃耀。",
                     spots: [
-                        { name: "地中海港灣", info: "歐式建築群與精彩的水上表演。", time: "全天" },
-                        { name: "翱翔：騰空志願", info: "最感人的 4D 飛行體驗。", time: "全天" },
-                        { name: "威尼斯貢多拉", info: "蜜月必搭，體驗異國水上浪漫。", time: "全天" },
-                        { name: "美人魚礁湖", info: "充滿幻想色彩的海底世界。", time: "全天" },
-                        { name: "大井町飯店", info: "方便的交通與生活機能。", time: "Check-in" }
+                        { name: "仙杜瑞拉城堡", time: "全天", info: "樂園永恆地標", hours: "09:00 - 21:00" },
+                        { name: "美女與野獸：城堡奇緣", time: "全天", info: "熱門首選 DPA", hours: "09:00 - 21:00" },
+                        { name: "夜間電子大遊行", time: "19:30 (依季節)", info: "璀璨夢幻秀", hours: "每日演出時間請查官網" }
                     ],
-                    foods: ["麥哲倫餐廳", "三眼怪麻糬", "餃子熱狗棒", "阿比修斯餐酒館", "大井町串燒"],
+                    foods: [
+                        { name: "米奇鬆餅 (Great American)", hours: "09:00 - 18:30 (建議先排)" },
+                        { name: "爆米花桶 (園內各處)", hours: "10:00 - 20:00" }
+                    ],
                     hotel: "大井町飯店 (大井町站中央口)"
                 },
                 {
-                    day: 10, date: "2026.06.17 Wed", shortDate: "06.17", weekday: "Wed", title: "童心：森林迷宮", theme: "吉卜力 ➔ HARBS ➔ 吉祥寺",
+                    day: 10, date: "2026.06.17 Wed", shortDate: "06.17", weekday: "Wed", title: "散冊：質感與漢堡", theme: "中目黑 ➔ 代官山 ➔ HARBS ➔ Shake Shack",
                     image: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Room Only / 不含早餐",
                     transport: [
-                        { mode: "JR 京濱東北線 + 中央線快速", route: "大井町 ➔ 品長 ➔ 新宿 ➔ 三鷹", duration: "50 mins", stations: ["大井町", "品川", "田町", "濱松町", "新橋", "有樂町", "東京", "神田", "御茶之水", "四谷", "新宿", "中野", "高圓寺", "阿佐谷", "荻窪", "西荻窪", "吉祥寺", "三鷹"], price: "¥580 (約 NT$122)", payment: "Suica。", note: "在新宿站注意中央線 (橙色) 的方向。" }
+                        { mode: "JR + 地鐵綜合移動", route: "大井町 ➔ 中目黑", duration: "30 mins", stations: ["➊ 大井町 »", "➋ 品川 »", "➌ 惠比壽 (轉乘) »", "➍ 中目黑"], price: "¥420", payment: "Suica", note: "第一站去中目黑星巴克抽號碼牌。" }
                     ],
-                    description: "今日走進宮崎駿的奇幻想像。吉卜力美術館不只是展覽，更是一個巨大的藝術裝置。隨後漫步到全東京最宜居的吉祥寺，這裡的步調緩慢而有質感。Sarah 期待已久的 HARBS 水果千層，就在這裡優雅地等待著。每一層奶油與新鮮水果的堆疊，都是職人的堅持。Johnny 可以陪著 Sarah 在井之頭公園看著池邊的新綠。吉祥寺的雜貨小店與這座公園，是這趟蜜月中溫柔而美好的插曲。",
+                    description: "今天我們要留給東京最優雅的角落。早晨先來到中目黑星巴克旗艦店，Johnny 為 Sarah 拍下精緻照片。午後來到惠比壽，品嚐 Sarah 期待的 HARBS 水果千層。晚餐則是 Johnny 指定的 Shake Shack，美式漢堡的豪邁滿足感，為這天完美收尾。",
                     spots: [
-                        { name: "吉卜力美術館", info: "宮崎駿手繪世界的實體化。", time: "10:00" },
-                        { name: "井之頭恩賜公園", info: "適合野餐與森林浴的都會綠洲。", time: "13:00" },
-                        { name: "HARBS 吉祥寺店", info: "Sarah 的甜點夢想清單。", time: "14:30" },
-                        { name: "吉祥寺商店街", info: "各式精緻日系雜貨與生活用品。", time: "16:00" },
-                        { name: "大井町百貨", info: "方便的夜間補貨點。", time: "20:00" }
+                        { name: "中目黑星巴克旗艦店", time: "10:00", info: "隈研吾設計旗艦店", hours: "07:00 - 22:00 (最後點餐 21:30)" },
+                        { name: "代官山 T-Site", time: "14:30", info: "全球最美蔦屋書店", hours: "09:00 - 22:00" },
+                        { name: "惠比壽花園廣場", time: "17:00", info: "浪漫約會聖地", hours: "自由開放" }
                     ],
-                    foods: ["HARBS", "SATOU 牛肉丸", "吉卜力蘇打水", "草帽咖啡廳熱狗", "一蘭拉麵"],
+                    foods: [
+                        { name: "HARBS (惠比壽 Atre 店)", hours: "10:00 - 21:00 (最後點餐 20:30)" },
+                        { name: "Shake Shack (惠比壽)", hours: "11:00 - 22:30 (最後點餐 22:00)" }
+                    ],
                     hotel: "大井町飯店"
                 },
                 {
                     day: 11, date: "2026.06.18 Thu", shortDate: "06.18", weekday: "Thu", title: "潮流：甜點與皮克斯", theme: "I'm donut ? ➔ age,3 ➔ 皮克斯展",
                     image: "https://images.pexels.com/photos/3411139/pexels-photo-3411139.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: "Room Only / 不含早餐",
                     transport: [
-                        { mode: "JR + 地鐵綜合移動", route: "大井町 ➔ 澀谷 ➔ 銀座 ➔ 豐洲", duration: "Total 60 mins", stations: ["大井町", "澀谷", "銀座", "豐洲"], price: "¥600 (約 NT$125)", payment: "Suica。", note: "17:30 前須抵達豐洲，請留意下午在銀座的停留時間。" }
+                        { mode: "JR + 地鐵綜合移動", route: "大井町 ➔ 澀谷 ➔ 豐洲", duration: "Total 60 mins", stations: ["➊ 大井町 »", "➋ 品川 »", "➌ 澀谷 (買甜甜圈) »", "➍ 銀座 (轉乘) »", "➎ 豐洲"], price: "¥600", payment: "Suica", note: "17:30 前須抵達豐洲，請留意下午在銀座時間。" }
                     ],
-                    description: "蜜月的尾聲，是一場關於味覺與視覺的冒險。早上我們先到澀谷排隊，品嚐那口感奇蹟的 I'm donut ?。接著前往銀座，尋找近期熱門的 age,3 炸三明治，酥脆外殼與細膩內餡的組合，是都會感的精緻展現。17:30 準時抵達豐洲。皮克斯世界展正閃爍著勇氣的光芒。在特展中，看著那些動畫背後的創作熱忱，感受藝術與科技的完美結合。今晚的東京灣，風是涼的，心是甜的。",
+                    description: "蜜月的尾聲，是一場關於潮流味覺的冒險。早上先到澀谷排隊，品嚐那口感奇蹟的 I'm donut ?。下午移動到銀座，享用熱門的 age,3 炸三明治。17:30 準時抵達豐洲，皮克斯世界展正閃爍著勇氣的光芒，今晚的東京灣，風是涼的，心是甜的。",
                     spots: [
-                        { name: "I'm donut ? 澀谷", info: "口感奇蹟的生甜甜圈排隊店。", time: "10:30" },
-                        { name: "澀谷天空下景觀", info: "東京最具能量的地帶。", time: "12:00" },
-                        { name: "age,3 銀座店", info: "視覺與味覺雙享的炸三明治。", time: "14:30" },
-                        { name: "皮克斯世界展", info: "17:30 準時入場觀賞動畫藝術。", time: "17:30" },
-                        { name: "豐洲 LaLaport 夜景", info: "彩虹大橋下的浪漫散步。", time: "20:00" }
+                        { name: "I'm donut ? 澀谷", time: "10:30", info: "全東京最難買甜甜圈", hours: "11:00 - 20:00 (售完即收，建議早到)" },
+                        { name: "SHIBUYA SKY", time: "12:00 (依預約)", info: "澀谷天空景觀台", hours: "10:00 - 22:30 (最後入場 21:20)" },
+                        { name: "皮克斯世界展", time: "17:30 (依預約)", info: "豐洲展覽預約制", hours: "10:00 - 20:00 (依官網)" }
                     ],
-                    foods: ["I'm donut ?", "age,3", "銀座木村家", "星巴克海景店", "豐洲市場海鮮"],
+                    foods: [
+                        { name: "age,3 銀座店", hours: "11:00 - 19:00" },
+                        { name: "銀座木村家", hours: "10:00 - 20:00" },
+                        { name: "豐洲市場海鮮丼", hours: "05:00 - 14:00 (依店家)" }
+                    ],
                     hotel: "大井町飯店"
                 },
                 {
-                    day: 12, date: "2026.06.19 Fri", shortDate: "06.19", weekday: "Fri", title: "終曲：帶走滿箱的愛", theme: "Yellow 蛋包飯 ➔ 成田二航",
+                    day: 12, date: "2026.06.19 Fri", shortDate: "06.19", weekday: "Fri", title: "終曲：帶走滿箱的愛", theme: "百貨採買 ➔ Yellow ➔ 機場",
                     image: "https://images.pexels.com/photos/4836109/pexels-photo-4836109.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    breakfastInfo: null,
                     transport: [
-                        { mode: "JR + N'EX (成田特快)", route: "大井町 ➔ 品川 ➔ 成田機場", duration: "90 mins", stations: ["大井町", "品川", "成田", "空港第 2 航廈"], price: "¥3,500 (約 NT$735)", payment: "JR 售票機劃位。", note: "請務必搭乘 13:10 左右 of N'EX，保險抵達機場。" }
+                        { mode: "JR + N'EX (成田特快)", route: "大井町 ➔ 機場", duration: "90 mins", stations: ["➊ 大井町 »", "➋ 品川 (轉乘點) »", "➌ 成田 »", "➍ 空港第 2 航廈"], price: "¥3,500", payment: "品川站 JR 劃位", note: "務必搭乘 13:10 左右的 N'EX，保險抵達機場。" }
                     ],
-                    description: "蜜月的最後一個早晨，不需要奔波。在大井町飯店旁的商場裡，那盤金黃軟嫩的 Yellow 蛋包飯 是我們給這趟旅程最後的溫柔。Johnny 幫 Sarah 擦掉嘴邊的醬汁，你們相視一笑。行李箱重了許多，除了買給親友的禮物，更多的是這 12 天來對彼此更深的了解與默契。從輕井澤的森林到東京的繁華，每一站都留下了你們並肩的足跡。搭上 N'EX 的那一刻，這不是結束，而是你們故事新章節的開始。",
+                    description: "蜜月的最後一個早晨，我們留給生活感十足的大井町。進行最後一輪藥妝與伴手禮補貨。隨後品嚐 Yellow 蛋包飯。搭上 N'EX 的那一刻，與 Johnny 並肩看著窗外倒退的風景，心中滿是這 12 天的甜蜜回憶。這不是結束，而是你們故事新章節的開始。",
                     spots: [
-                        { name: "大井町 Atré 商場", info: "享用 Yellow 蛋包飯 與最後採買。", time: "10:30" },
-                        { name: "品川車站", info: "東京繁忙節奏的最後窗口。", time: "12:30" },
-                        { name: "成田機場 N'EX", info: "最後一次在座位上整理照片與心情。", time: "13:30" },
-                        { name: "成田二航免稅店", info: "機場伴手禮最後衝刺。", time: "15:00" },
-                        { name: "機艙內", info: "16:20 起飛，帶著滿滿愛意回家。", time: "16:20" }
+                        { name: "大井町 Atré 百貨", time: "10:00", info: "最後一輪藥妝、伴手禮補貨", hours: "10:00 - 21:00" },
+                        { name: "Yellow 蛋包飯", time: "11:30", info: "Atré 百貨內美食", hours: "11:00 - 21:00" },
+                        { name: "成田機場免稅採購", time: "14:30", info: "機場伴手禮最後補貨", hours: "24小時 (依店家)" }
                     ],
-                    foods: ["Yellow 蛋包飯", "品川駅弁", "機場最後拉麵", "抹茶拿鐵", "機上餐食"],
-                    hotel: "Home"
+                    foods: [
+                        { name: "Yellow 蛋包飯", hours: "11:00 - 21:00 (最後點餐 20:30)" },
+                        { name: "品川駅弁 (鐵路便當)", hours: "06:00 - 22:00" }
+                    ],
+                    hotel: "Sweet Home"
                 }
             ];
 
@@ -304,12 +328,12 @@
                         />
                         <div className="relative z-10 text-center text-white px-4 md:px-6">
                             <div className="mb-3 md:mb-4 tracking-[0.4em] text-[8px] md:text-[10px] uppercase opacity-70 italic font-light">The 2026 Honeymoon Journal</div>
-                            <h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow">JOHNNY & SARAH</h1>
-                            <p className="text-[10px] md:text-base font-light tracking-[0.2em] md:tracking-[0.3em] opacity-90 uppercase text-shadow">Japan. Romantic. Zen.</p>
-                            <div className="mt-8 md:mt-10 flex justify-center gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-widest">
-                                <span className="border-b border-white/40 pb-1">06.08</span>
+                            <h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow uppercase font-bold">JOHNNY & SARAH</h1>
+                            <p className="text-[10px] md:text-base font-light tracking-[0.2em] md:tracking-[0.3em] opacity-90 uppercase text-shadow font-bold">Japan. Romantic. Zen.</p>
+                            <div className="mt-8 md:mt-10 flex justify-center gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-widest font-bold">
+                                <span className="border-b border-white/40 pb-1 text-shadow">06.08</span>
                                 <span className="opacity-40">/</span>
-                                <span className="border-b border-white/40 pb-1">06.19</span>
+                                <span className="border-b border-white/40 pb-1 text-shadow">06.19</span>
                             </div>
                         </div>
                         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
@@ -327,7 +351,7 @@
                                         activeDay === idx ? 'text-[#3E3E3E] scale-110' : 'text-[#A0A0A0] hover:text-[#3E3E3E]'
                                     }`}
                                 >
-                                    <span className="text-[14px] md:text-[20px] font-medium leading-none mb-1">
+                                    <span className="text-[14px] md:text-[20px] font-medium leading-none mb-1 font-serif">
                                         {d.shortDate.split('.')[1]}
                                     </span>
                                     <span className={`text-[8px] md:text-[10px] tracking-widest uppercase font-bold border-t pt-1 ${activeDay === idx ? 'border-[#8E9775] text-[#8E9775]' : 'border-transparent'}`}>
@@ -340,10 +364,21 @@
 
                     <main className="max-w-4xl mx-auto py-10 md:py-20 px-5 md:px-8">
                         <div className="mb-12 md:mb-20 text-center">
-                            <div className="text-[9px] md:text-[11px] tracking-[0.4em] text-[#9A9A9A] uppercase mb-3 md:mb-4">{currentDay.date} — DAY {currentDay.day}</div>
-                            <h2 className="text-xl md:text-4xl font-light text-[#3E3E3E] mb-4 md:mb-6 tracking-wide font-serif leading-snug">{currentDay.title}</h2>
+                            <div className="text-[9px] md:text-[11px] tracking-[0.4em] text-[#9A9A9A] uppercase mb-2 font-bold">{currentDay.date} — DAY {currentDay.day}</div>
+                            
+                            {/* 置頂早餐資訊 */}
+                            {currentDay.breakfastInfo && (
+                                <div className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 bg-[#F9F7F5] rounded-full border border-[#E8E4E0] animate-fadeIn">
+                                    <Icon name="coffee" size={12} className={currentDay.breakfastInfo.includes('Room Only') ? 'text-[#A0A0A0]' : 'text-[#8E9775]'} />
+                                    <span className={`text-[10px] md:text-[11px] tracking-widest italic ${currentDay.breakfastInfo.includes('Room Only') ? 'text-[#A0A0A0]' : 'text-[#8E9775] font-medium'}`}>
+                                        {currentDay.breakfastInfo}
+                                    </span>
+                                </div>
+                            )}
+
+                            <h2 className="text-xl md:text-4xl font-light text-[#3E3E3E] mb-4 md:mb-6 tracking-wide font-serif leading-snug uppercase">{currentDay.title}</h2>
                             <div className="w-8 md:w-10 h-[1px] bg-[#D4CFC7] mx-auto mb-4 md:mb-6"></div>
-                            <p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest uppercase">{currentDay.theme}</p>
+                            <p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest uppercase font-bold">{currentDay.theme}</p>
                         </div>
 
                         <section className="mb-16 md:mb-24">
@@ -356,11 +391,11 @@
 
                         <section className="mb-16 md:mb-24">
                             <h3 className="flex items-center text-[10px] md:text-sm font-bold mb-6 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase">
-                                <Icon name="train" size={16} className="mr-2 opacity-30" /> Transport Map
+                                <Icon name="train" size={16} className="mr-2 opacity-30" /> Transport Hub
                             </h3>
                             <div className="space-y-6 md:space-y-10">
                                 {currentDay.transport.map((t, idx) => (
-                                    <div key={idx} className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2rem] border border-[#E8E4E0] shadow-sm">
+                                    <div key={idx} className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2rem] border border-[#E8E4E0] shadow-sm transition-all hover:border-[#D4CFC7]/50">
                                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
                                             <div className="flex-1">
                                                 <div className="flex items-center gap-2 text-[#8E9775] mb-4 md:mb-6">
@@ -373,28 +408,25 @@
                                                     className="flex items-center gap-2 text-[9px] md:text-[10px] text-[#9A9A9A] hover:text-[#3E3E3E] transition-colors mb-5 md:mb-6 font-bold tracking-[0.1em]"
                                                 >
                                                     <Icon name={showStations[`${activeDay}-${idx}`] ? "chevron-up" : "chevron-down"} size={10} />
-                                                    經過站點 ({t.stations.length})
+                                                    顯示詳細站點路線順序 ({t.stations.length})
                                                 </button>
 
                                                 {showStations[`${activeDay}-${idx}`] && (
                                                     <div className="mb-6 md:mb-8 p-4 md:p-6 bg-[#FDFCFB] rounded-xl md:rounded-2xl border-l-2 border-[#D4CFC7] animate-fadeIn">
-                                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[10px] md:text-[11px] font-light text-[#7C7C7C]">
+                                                        <div className="text-[10px] md:text-[11px] font-light text-[#7C7C7C] flex flex-wrap gap-x-6 gap-y-3 leading-loose">
                                                             {t.stations.map((s, sIdx) => (
-                                                                <li key={sIdx} className="flex items-center gap-2 md:gap-3">
-                                                                    <span className="w-1 h-1 rounded-full bg-[#D4CFC7]"></span>
-                                                                    {s}
-                                                                </li>
+                                                                <span key={sIdx}>{s}</span>
                                                             ))}
-                                                        </ul>
+                                                        </div>
                                                     </div>
                                                 )}
 
                                                 <div className="grid grid-cols-2 gap-4 md:gap-6">
-                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
-                                                        <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Fare</p>
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl">
+                                                        <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Price Reference</p>
                                                         <p className="text-[10px] md:text-sm font-medium">{t.price}</p>
                                                     </div>
-                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl">
                                                         <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Duration</p>
                                                         <p className="text-[10px] md:text-sm font-medium">{t.duration}</p>
                                                     </div>
@@ -402,10 +434,10 @@
                                             </div>
                                             <div className="lg:w-1/3 bg-[#FDFCFB] p-6 md:p-8 rounded-xl md:rounded-2xl border border-[#F0EDE9] flex flex-col justify-center">
                                                 <div className="flex items-center gap-2 mb-3 md:mb-4 text-[#3E3E3E] font-bold text-[8px] md:text-[10px] uppercase tracking-widest">
-                                                    <Icon name="credit-card" size={12} className="opacity-60" /> Guide
+                                                    <Icon name="credit-card" size={12} className="opacity-60" /> Navigator Guide
                                                 </div>
                                                 <p className="text-[9px] md:text-[11px] leading-relaxed text-[#9A9A9A] mb-3 md:mb-4 font-light">{t.payment}</p>
-                                                <p className="text-[9px] md:text-[10px] italic text-[#8E9775] font-bold">※ {t.note}</p>
+                                                <p className="text-[9px] md:text-[10px] italic text-[#8E9775] font-bold underline decoration-[#8E9775]/20">※ {t.note}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -423,9 +455,12 @@
                                         <div key={idx} className="bg-white p-5 md:p-6 rounded-xl md:rounded-2xl border border-[#E8E4E0] shadow-sm group hover:border-[#8E9775]/30 transition-all">
                                             <div className="flex justify-between items-start mb-2.5">
                                                 <h4 className="text-xs md:text-base font-medium text-[#3E3E3E] group-hover:text-[#8E9775] transition-colors font-serif">{s.name}</h4>
-                                                <span className="text-[8px] md:text-[9px] text-[#9A9A9A] font-bold whitespace-nowrap ml-2">{s.time}</span>
+                                                <span className="text-[8px] md:text-[9px] text-[#9A9A9A] font-bold whitespace-nowrap ml-2 uppercase">{s.time}</span>
                                             </div>
-                                            <p className="text-[9px] md:text-[11px] text-[#9A9A9A] font-light leading-relaxed">{s.info}</p>
+                                            <p className="text-[9px] md:text-[11px] text-[#9A9A9A] font-light leading-relaxed mb-3">{s.info}</p>
+                                            <div className="flex items-center gap-1.5 text-[8px] md:text-[9px] text-[#8E9775] font-medium bg-[#8E9775]/5 px-2.5 py-1 rounded-md inline-block">
+                                              <Icon name="clock" size={10} /> {s.hours}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -437,21 +472,27 @@
                                 </h3>
                                 <div className="space-y-3">
                                     {currentDay.foods.map((f, idx) => (
-                                        <div key={idx} className="flex items-center gap-4 bg-white p-4 md:p-5 rounded-xl md:rounded-2xl border border-transparent hover:border-[#E8E4E0] transition-all hover:bg-[#F9F7F5] group shadow-sm">
-                                            <span className="text-[8px] md:text-[10px] font-bold text-[#D4CFC7] group-hover:text-[#8E9775]">0{idx + 1}</span>
-                                            <span className="text-[10px] md:text-sm font-light text-[#5C5C5C] tracking-widest leading-tight">
-                                                {renderDescription(f)}
-                                            </span>
+                                        <div key={idx} className="bg-white p-4 md:p-5 rounded-xl md:rounded-2xl border border-transparent hover:border-[#E8E4E0] transition-all hover:bg-[#F9F7F5] group shadow-sm">
+                                            <div className="flex items-center justify-between mb-2">
+                                              <span className="text-[10px] md:text-sm font-light text-[#5C5C5C] tracking-widest leading-tight">
+                                                  {renderDescription(f.name)}
+                                              </span>
+                                              <span className="text-[8px] md:text-[10px] font-bold text-[#D4CFC7] group-hover:text-[#8E9775]">0{idx + 1}</span>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-[8px] md:text-[9px] text-[#9A9A9A] italic">
+                                              <Icon name="clock" size={10} className="opacity-40" /> {f.hours}
+                                            </div>
                                         </div>
                                     ))}
                                     <div className="mt-8 md:mt-10 p-8 md:p-10 bg-[#FDFCFB] rounded-[1.5rem] md:rounded-[2.5rem] border-2 border-dashed border-[#E8E4E0] text-center">
-                                        <Icon name="coffee" size={20} className="mx-auto mb-3 opacity-30" />
-                                        <p className="text-[9px] md:text-[11px] italic text-[#9A9A9A] tracking-wider">Moments captured in flavors.</p>
+                                        <Icon name="coffee" size={20} className="mx-auto mb-3 opacity-30 text-[#8E9775]" />
+                                        <p className="text-[9px] md:text-[11px] italic text-[#9A9A9A] tracking-wider uppercase">Moments captured in flavors.</p>
                                     </div>
                                 </div>
                             </section>
                         </div>
 
+                        {/* Accommodation Footer */}
                         <div className="bg-white p-8 md:p-16 rounded-[1.5rem] md:rounded-[3rem] text-center border border-[#E8E4E0] relative group overflow-hidden shadow-sm mb-12">
                             <div className="absolute top-0 left-0 w-full h-1.5 bg-[#8E9775]/20"></div>
                             <p className="text-[8px] md:text-[10px] text-[#9A9A9A] mb-3 md:mb-4 uppercase tracking-[0.4em]">Home for the night</p>
@@ -460,6 +501,7 @@
                             </h4>
                         </div>
 
+                        {/* Pagination Section */}
                         <div className="flex justify-between mt-12 md:mt-24 pt-8 md:pt-12 border-t border-[#E8E4E0]">
                             <button 
                                 disabled={activeDay === 0}
@@ -478,9 +520,10 @@
                         </div>
                     </main>
 
+                    {/* Footer Section */}
                     <footer className="bg-[#3E3E3E] text-[#D4CFC7] py-20 md:py-32 px-6 md:px-12 text-center">
                         <div className="max-w-xl mx-auto">
-                            <div className="text-[9px] md:text-[11px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Johnny & Sarah</div>
+                            <div className="text-[10px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Johnny & Sarah</div>
                             <p className="text-[10px] md:text-[13px] tracking-[0.2em] md:tracking-[0.25em] leading-relaxed mb-10 md:mb-16 opacity-75 uppercase font-light">
                                 Designed with love for a lifelong adventure.<br/>
                                 A collection of quiet moments in the heart of Japan.
