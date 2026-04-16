@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Johnny & Sarah's Honeymoon</title>
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;700&family=Noto+Sans+TC:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- React, Babel, & Lucide Icons -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -42,6 +44,11 @@
         const App = () => {
             const [activeDay, setActiveDay] = useState(0);
             const [showStations, setShowStations] = useState({});
+
+            // 新增：當 activeDay 改變時，自動捲動回頂部
+            useEffect(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, [activeDay]);
 
             const toggleStations = (idx) => {
                 setShowStations(prev => ({ ...prev, [idx]: !prev[idx] }));
@@ -147,7 +154,7 @@
                         { mode: "北陸新幹線", route: "輕井澤 ➔ 東京站", duration: "75 mins", stations: ["➊ 輕井澤 »", "➋ 高崎 »", "➌ 大宮 »", "➍ 上野 »", "➎ 東京"], price: "¥6,020", payment: "Smart EX", note: "建議搭乘 15:00 班次。" },
                         { mode: "東海道新幹線", route: "東京站 ➔ 三島站", duration: "55 mins", stations: ["➊ 東京 »", "➋ 品川 »", "➌ 新橫濱 »", "➍ 熱海 »", "➎ 三島"], price: "¥4,600", payment: "Smart EX", note: "於東京站品嚐利久牛舌，再悠閒搭新幹線回三島。" }
                     ],
-                    description: "在離開輕井澤前，我們把大半天的時間留給 Outlet。待到 15:00 左右，搭上新幹線回到樞紐東京站。這不僅是移動，更是一場關於厚實口感的味覺饗宴。傍晚在東京站內品嚐期待已久的利久牛舌，餐後轉乘東海道新幹線，在夜色中抵達三島飯店。",
+                    description: "在離開輕井澤前，我們把大半天的時間留給 Outlet。待到 15:05 左右，搭上新幹線回到樞紐東京站。這不僅是移動，更是一場關於厚實口感的味覺饗宴。傍晚在東京站內品嚐期待已久的利久牛舌，餐後轉乘東海道新幹線，在夜色中抵達三島飯店。",
                     spots: [
                         { name: "輕井澤王子 Outlet", time: "10:00 - 15:00", info: "森林系精品購物", hours: "10:00 - 19:00" },
                         { name: "東京站一番街", time: "17:00 - 19:00", info: "利久牛舌晚餐", hours: "11:00 - 23:00 (最後點餐 22:30)" },
@@ -256,7 +263,7 @@
                     hotel: "大井町飯店 (大井町站中央口)"
                 },
                 {
-                    day: 10, date: "2026.06.17 Wed", shortDate: "06.17", weekday: "Wed", title: "散冊：質感與漢堡", theme: "中目黑 ➔ 代官山 ➔ HARBS ➔ Shake Shack",
+                    day: 10, date: "2026.06.17 Wed", shortDate: "06.17", weekday: "Wed", title: "散策：質感與漢堡", theme: "中目黑 ➔ 代官山 ➔ HARBS ➔ Shake Shack",
                     image: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     breakfastInfo: "Room Only / 不含早餐",
                     transport: [
@@ -346,7 +353,7 @@
                             {itineraryData.map((d, idx) => (
                                 <button
                                     key={idx}
-                                    onClick={() => { setActiveDay(idx); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                    onClick={() => setActiveDay(idx)}
                                     className={`flex-shrink-0 flex flex-col items-center transition-all duration-300 min-w-[50px] md:min-w-[65px] py-1 ${
                                         activeDay === idx ? 'text-[#3E3E3E] scale-110' : 'text-[#A0A0A0] hover:text-[#3E3E3E]'
                                     }`}
@@ -422,11 +429,11 @@
                                                 )}
 
                                                 <div className="grid grid-cols-2 gap-4 md:gap-6">
-                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl">
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
                                                         <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Price Reference</p>
                                                         <p className="text-[10px] md:text-sm font-medium">{t.price}</p>
                                                     </div>
-                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl">
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
                                                         <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Duration</p>
                                                         <p className="text-[10px] md:text-sm font-medium">{t.duration}</p>
                                                     </div>
@@ -492,7 +499,6 @@
                             </section>
                         </div>
 
-                        {/* Accommodation Footer */}
                         <div className="bg-white p-8 md:p-16 rounded-[1.5rem] md:rounded-[3rem] text-center border border-[#E8E4E0] relative group overflow-hidden shadow-sm mb-12">
                             <div className="absolute top-0 left-0 w-full h-1.5 bg-[#8E9775]/20"></div>
                             <p className="text-[8px] md:text-[10px] text-[#9A9A9A] mb-3 md:mb-4 uppercase tracking-[0.4em]">Home for the night</p>
@@ -501,18 +507,17 @@
                             </h4>
                         </div>
 
-                        {/* Pagination Section */}
                         <div className="flex justify-between mt-12 md:mt-24 pt-8 md:pt-12 border-t border-[#E8E4E0]">
                             <button 
                                 disabled={activeDay === 0}
-                                onClick={() => { setActiveDay(prev => prev - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                onClick={() => setActiveDay(prev => prev - 1)}
                                 className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"
                             >
                                 <Icon name="chevron-left" size={16} /> Previous
                             </button>
                             <button 
                                 disabled={activeDay === itineraryData.length - 1}
-                                onClick={() => { setActiveDay(prev => prev + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                onClick={() => setActiveDay(prev => prev + 1)}
                                 className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"
                             >
                                 Next <Icon name="chevron-right" size={16} />
@@ -520,7 +525,6 @@
                         </div>
                     </main>
 
-                    {/* Footer Section */}
                     <footer className="bg-[#3E3E3E] text-[#D4CFC7] py-20 md:py-32 px-6 md:px-12 text-center">
                         <div className="max-w-xl mx-auto">
                             <div className="text-[10px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Johnny & Sarah</div>
