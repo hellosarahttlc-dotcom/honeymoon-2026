@@ -1,535 +1,505 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s5 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s6 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s7 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #137646; background-color: #ecf1f7; -webkit-text-stroke: 0px #137646}
-    span.s10 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s11 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah & Johnny 的 2026 莫蘭迪浪漫散策</title>
+    <!-- 樣式與高品質字體 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;700&family=Noto+Sans+TC:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- React 核心元件 -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel 編譯器 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide 圖示庫 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .font-serif { font-family: 'Noto Serif TC', serif; }
+        body, .font-sans { font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+        .animate-slowZoom { animation: slowZoom 10s ease-out forwards; }
+        .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+        /* 防止手機端點選時出現藍色區塊 */
+        * { -webkit-tap-highlight-color: transparent; }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s5"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s1">"zh-TW"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">Sarah &amp; Johnny 的 2026 莫蘭迪浪漫散策</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 字體與樣式 CDN --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s5"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;700&amp;family=Noto+Sans+TC:wght@100;300;400;700&amp;display=swap"</span><span class="s5"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- React &amp; Babel CDN --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react@18/umd/react.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@babel/standalone/babel.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Lucide Icons --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/lucide@latest"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/lucide-react@latest"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">.font-serif</span><span class="s1"> { </span><span class="s2">font-family:</span><span class="s1"> </span><span class="s7">'Noto Serif TC'</span><span class="s1">, </span><span class="s8">serif</span><span class="s1">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">body</span><span class="s5">, </span><span class="s4">.font-sans</span><span class="s5"> { </span><span class="s1">font-family:</span><span class="s5"> </span><span class="s7">'Noto Sans TC'</span><span class="s5">, </span><span class="s8">sans-serif</span><span class="s5">; </span><span class="s1">font-weight:</span><span class="s5"> </span><span class="s9">300</span><span class="s5">; }</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">.no-scrollbar::-webkit-scrollbar</span><span class="s5"> { </span><span class="s2">display:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">.no-scrollbar</span><span class="s5"> { </span><span class="s1">-ms-overflow-style:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; </span><span class="s1">scrollbar-width:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s10">@keyframes</span><span class="s5"> </span><span class="s8">fadeIn</span><span class="s5"> { </span><span class="s8">from</span><span class="s5"> { </span><span class="s1">opacity:</span><span class="s5"> </span><span class="s9">0</span><span class="s5">; </span><span class="s1">transform:</span><span class="s5"> </span><span class="s8">translateY(</span><span class="s9">10px</span><span class="s8">)</span><span class="s5">; } </span><span class="s8">to</span><span class="s5"> { </span><span class="s1">opacity:</span><span class="s5"> </span><span class="s9">1</span><span class="s5">; </span><span class="s1">transform:</span><span class="s5"> </span><span class="s8">translateY(</span><span class="s9">0</span><span class="s8">)</span><span class="s5">; } }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">@keyframes</span><span class="s1"> </span><span class="s8">slowZoom</span><span class="s1"> { </span><span class="s8">from</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">scale(</span><span class="s9">1</span><span class="s8">)</span><span class="s1">; } </span><span class="s8">to</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">scale(</span><span class="s9">1.08</span><span class="s8">)</span><span class="s1">; } }</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">.animate-fadeIn</span><span class="s5"> { </span><span class="s2">animation:</span><span class="s5"> </span><span class="s1">fadeIn</span><span class="s5"> </span><span class="s9">0.8s</span><span class="s5"> </span><span class="s1">ease-out</span><span class="s5"> </span><span class="s1">forwards</span><span class="s5">; }</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">.animate-slowZoom</span><span class="s5"> { </span><span class="s2">animation:</span><span class="s5"> </span><span class="s1">slowZoom</span><span class="s5"> </span><span class="s9">10s</span><span class="s5"> </span><span class="s1">ease-out</span><span class="s5"> </span><span class="s1">forwards</span><span class="s5">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">.text-shadow</span><span class="s1"> { </span><span class="s2">text-shadow:</span><span class="s1"> </span><span class="s9">0</span><span class="s1"> </span><span class="s9">2px</span><span class="s1"> </span><span class="s9">8px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s9">0</span><span class="s1">,</span><span class="s9">0</span><span class="s1">,</span><span class="s9">0</span><span class="s1">,</span><span class="s9">0.4</span><span class="s8">)</span><span class="s1">; }</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/* 手機版優化：防止圖片載入前的閃爍 */</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">.img-container</span><span class="s5"> { </span><span class="s1">background-color:</span><span class="s5"> </span><span class="s8">#929D85</span><span class="s5">; </span><span class="s1">position:</span><span class="s5"> </span><span class="s8">relative</span><span class="s5">; }</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">body</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-[#FDFCFB]"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"root"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text/babel"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const { useState, useEffect } = React;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const {<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>Calendar, MapPin, Train, Bus, Utensils, Info,<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ChevronRight, ChevronLeft, Clock, CreditCard,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>Camera, Coffee, ShoppingBag, Waves, Mountain,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ChevronDown, ChevronUp, Sparkles<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} = lucideReact;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const App = () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [activeDay, setActiveDay] = useState(0);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [showStations, setShowStations] = useState({});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const toggleStations = (idx) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setShowStations(prev =&gt; ({ ...prev, [idx]: !prev[idx] }));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const boldKeywords = [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>"Indigo 飯店餐廳", "20:15 的飯店餐廳", "利久牛舌", "HARBS", "I'm donut ?",<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>"age,3", "Yellow 蛋包飯", "川上庵", "丸山咖啡", "淺野屋", "熱海布丁",<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>"三島鰻魚飯", "櫻家", "京丸", "星野溫泉", "吉卜力美術館", "皮克斯世界展"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const renderDescription = (text) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (!text) return "";</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const cleanText = text.replace(/\*\*/g, '');</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>let parts = [cleanText];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>boldKeywords.forEach(keyword =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>let newParts = [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>parts.forEach(part =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (typeof part === 'string') {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const splitPart = part.split(keyword);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>for (let i = 0; i &lt; splitPart.length; i++) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>newParts.push(splitPart[i]);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>if (i &lt; splitPart.length - 1) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>newParts.push(&lt;span key={keyword + i} className="font-bold text-[#4A5D4E] border-b border-[#A7B09E]/40"&gt;{keyword}&lt;/span&gt;);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>newParts.push(part);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>parts = newParts;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>return parts;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const itineraryData = [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 1, date: "2026.06.08 Mon", title: "初抵：森林的呼吸", theme: "成田二航 ➔ 輕井澤 Indigo",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/3017093/pexels-photo-3017093.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "N'EX (成田特快)", route: "成田機場(T2) ➔ 東京站", duration: "60 mins", stations: ["成田機場第 2 航廈", "成田", "佐倉", "四街道", "千葉", "船橋", "錦糸町", "東京站"], price: "¥3,070 (約 NT$645)", payment: "機場 B1 JR 櫃檯劃位，可刷 Visa/MasterCard。", note: "全車指定席，抵達二航後下 B1 辦理即可。" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "北陸新幹線", route: "東京站 ➔ 輕井澤站", duration: "75 mins", stations: ["東京", "上野", "大宮", "高崎", "安中榛名", "輕井澤"], price: "¥6,020 (約 NT$1,265)", payment: "售票機或 Smart EX APP。", note: "由東京站南轉乘口進入，轉乘時間建議留 20 分鐘。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "Sarah 和 Johnny 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐。不需要奔波，只需將彼此調整到「度假模式」，在森林的呼吸聲中入眠。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "成田機場第二航廈", info: "抵達並辦理 N'EX 乘車手續。", time: "15:05 落地" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "東京站紅磚區", info: "文藝復興式建築，東京的永恆經典。", time: "16:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "輕井澤車站南口", info: "森林之旅的入口，氛圍靜謐。", time: "17:45" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "Hotel Indigo 輕井澤", info: "莫蘭迪灰綠色調的設計飯店。", time: "Check-in" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "飯店餐廳預約", info: "20:15 的飯店餐廳，開啟浪漫序章。", time: "20:15" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["Indigo 飯店餐廳", "信州高原牛奶", "精釀麥酒", "輕食餐盒", "輕井澤限定小食"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Hotel Indigo Karuizawa"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 2, date: "2026.06.09 Tue", title: "散冊：單車上的文學", theme: "雲場池 ➔ 舊輕井澤",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/27896698/pexels-photo-27896698.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "電動助動力單車", route: "輕井澤站北口周邊租借", duration: "Full Day", stations: ["車站北口", "雲場池", "舊輕井澤銀座通", "聖保羅教堂"], price: "¥1,500 - ¥2,500 (約 NT$315 - $525)", payment: "現場現金支付或 Paypay。", note: "強烈建議選電動型，讓優雅不被坡道打擾。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "跨上單車，Sarah 的長裙在初夏的微風中輕輕擺動，Johnny 在身後捕捉這如電影般的瞬間。雲場池的池水呈現出一種深邃的灰綠色，池邊的倒影靜謐得讓人不忍呼吸。漫步在舊輕井澤銀座通，走進那些充滿質感的果醬老店，在聖保羅教堂的木造屋頂下，感受那份神聖而純粹的平靜。這一天，輕井澤的風、單車的齒輪聲、以及你們的笑聲，構成了最美的蜜月練習曲。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "雲場池", info: "被稱為天鵝湖，絕美的莫蘭迪綠湖景。", time: "10:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "舊輕井澤銀座通", info: "文青雜貨與手工果醬的聚集地。", time: "12:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "聖保羅天主教堂", info: "木造建築，輕井澤的靈魂景點。", time: "14:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "蕭紀念禮拜堂", info: "隱身在森林深處的純白空間。", time: "16:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "林蔭小道", info: "適合停下單車拍一張文青風格合照。", time: "隨時" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["淺野屋麵包", "澤屋果醬", "Mikado 摩卡霜淇淋", "茜屋精品咖啡", "腸詰屋手工香腸"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Hotel Indigo Karuizawa"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 3, date: "2026.06.10 Wed", title: "慢活：石之誓約", theme: "石之教堂 ➔ 榆樹街小鎮",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/36018204/pexels-photo-36018204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "星野接駁巴士", route: "輕井澤站南口 ➔ 星野區域", duration: "15 mins", stations: ["輕井澤站", "中輕井澤", "星野渡假區", "榆樹街小鎮"], price: "¥400 (約 NT$84)", payment: "Suica 或 現金。", note: "班次約每小時 1-2 班，建議先下載時刻表。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "今日走入建築大師的異想世界。石之教堂將石頭、玻璃與光影交織，象徵兩人的愛情如石般堅毅、如光般剔透。隨後漫步在榆樹街小鎮，這是在樹林中搭建的木質露台。聽著身旁溪流的潺潺聲，點一杯丸山咖啡。傍晚在星野溫泉中洗去疲憊，最後以一碗熱騰騰的川上庵蕎麥麵為輕井澤之旅畫下溫柔的句點。這是一種簡約與質感的碰撞，屬於你們的慢活節奏。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "石之教堂", info: "無縫接軌自然的奇蹟建築。", time: "11:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "星野高原教會", info: "充滿祈願與祝福的木造教堂。", time: "13:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "榆樹街小鎮", info: "森林中15家美學店舖。", time: "14:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "星野溫泉 蜻蜓之湯", info: "露天森林浴場。", time: "16:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "村民食堂", info: "精緻的定食選擇。", time: "18:00" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["川上庵", "丸山咖啡", "和菓子 菜之花", "高原起司蛋糕", "純鮮乳 Gelato"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Hotel Indigo Karuizawa"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 4, date: "2026.06.11 Thu", title: "移動：牛舌的香氣", theme: "Outlet ➔ 利久牛舌 ➔ 三島",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/16700785/pexels-photo-16700785.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "北陸新幹線", route: "輕井澤 ➔ 東京站", duration: "75 mins", stations: ["輕井澤", "高崎", "熊谷", "大宮", "上野", "東京"], price: "¥6,020 (約 NT$1,265)", payment: "售票機購票。", note: "中午抵達東京後，直奔一番街品嚐牛舌。" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "東海道新幹線", route: "東京站 ➔ 三島站", duration: "55 mins", stations: ["東京", "品川", "新橫濱", "小田原", "熱海", "三島"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "選擇藍標東海道線，體驗新幹線的極速。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "在離開輕井澤前，最後的購物衝刺留給 Outlet。午後搭上新幹線，回到樞紐東京站。這不僅是移動，更是一場味蕾的補給。Sarah 期待已久的利久牛舌，那厚實、焦香、彈牙的口感，是東京最令人懷念的味道。隨後轉乘東海道新幹線向南行駛，富士山的輪廓在夕陽中漸漸清晰。入住三島飯店，在頂樓浴場看著窗外的城市點點燈火，那是屬於蜜月中段的浪漫轉場。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "輕井澤王子 Outlet", info: "精品採購與最後補貨。", time: "10:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "東京站一番街", info: "品嚐利久牛舌的最佳地點。", time: "13:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "三島車站南口", info: "乾淨、安靜的富士門戶。", time: "16:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "三島東急飯店", info: "極簡質感的客房。", time: "Check-in" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "頂樓展望浴場", info: "享受富士山下的暖湯。", time: "21:00" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["利久牛舌", "三島馬鈴薯餅", "靜岡焙茶", "東京芭娜娜", "飯店特調酒品"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "富士山三島東急飯店"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 5, date: "2026.06.12 Fri", title: "神聖：箱根神社", theme: "蘆之湖 ➔ 海賊船 ➔ 大涌谷",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/10698490/pexels-photo-10698490.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "東海巴士 (元箱根港線)", route: "三島站南口 ➔ 元箱根港", duration: "50 mins", stations: ["三島站南口", "三島 Skywalk", "山中城跡", "箱根峠", "元箱根港"], price: "¥1,100 (約 NT$231)", payment: "Suica / 現金。", note: "飯店門口站牌上車，直達蘆之湖畔。" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "箱根海賊船", route: "元箱根港 ➔ 桃源台", duration: "30 mins", stations: ["元箱根港", "箱根町港", "桃源台港"], price: "¥1,200 (約 NT$250)", payment: "自動售票機。", note: "二樓甲板是拍富士山的絕佳位置。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "今日是山與海的對話。蘆之湖的湖水藍得深邃，箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Sarah 和 Johnny 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆溫熱的黑蛋，據說能延壽七年，也就是能再陪彼此走過更多歲月。這是一場日式莊嚴與浪漫童話的結合。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "箱根神社 水中鳥居", info: "水中紅色鳥居，必拍地標。", time: "10:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "蘆之湖海賊船", info: "華麗的歐式船隻，體驗海賊浪漫。", time: "12:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "箱根空中纜車", info: "俯瞰蘆之湖全景的最佳視擊。", time: "13:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "大涌谷", info: "感受地殼溫度的火山景觀。", time: "15:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "桃源台港", info: "安靜的小港口，適合漫步。", time: "16:30" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["大涌谷黑蛋", "箱根手工蕎麥", "蘆之湖戚風蛋糕", "溫泉小饅頭", "三島在地美食"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "富士山三島東急飯店"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 6, date: "2026.06.13 Sat", title: "復古：熱海的午後", theme: "來宮神社 ➔ ACAO 森林",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/31204726/pexels-photo-31204726.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "JR 東海道本線", route: "三島站 ➔ 熱海站", duration: "14 mins", stations: ["三島", "函南", "熱海"], price: "¥330 (約 NT$70)", payment: "Suica 直接感應。", note: "車次極多，隨到隨搭。" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "市內公車", route: "熱海站 ➔ ACAO FOREST", duration: "15 mins", stations: ["熱海站", "お宮の松", "親水公園", "ACAO FOREST"], price: "¥250/次", payment: "現金 / Suica。", note: "巴士沿著熱海灣行駛，海景非常開闊。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "熱海，一個讓時間慢下來的濱海城市。先在來宮神社的大樟樹下繞行，為這段婚姻祈求長久的福份。接著前往 ACAO FOREST，這是一個建在懸崖邊的花園，隈研吾設計的 COEDA HOUSE 咖啡廳完全由木榫接而成，從玻璃窗望出去，大海與森林交織成最優雅的背景。下午在親水公園走走，喝一瓶復古的熱海布丁，那種微甜的滋味，就是這趟旅程最溫柔的點綴。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "來宮神社", info: "2000 年神木，熱海最強能量點。", time: "09:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "ACAO FOREST", info: "世界級建築師隈研吾打造的空中花園。", time: "11:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "COEDA HOUSE", info: "絕美海景咖啡廳，拍照首選。", time: "13:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "熱海親水公園", info: "蔚藍海岸與白色長廊。", time: "15:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "熱海銀座商店街", info: "尋找熱海布丁與懷舊老街氣息。", time: "16:30" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["熱海布丁", "伊豆海鮮丼", "COEDA 特調飲品", "靜岡煎茶", "熱海小吃"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "富士山三島東急飯店"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 7, date: "2026.06.14 Sun", title: "轉身：夢幻的世界", theme: "三島慢活 ➔ 迪士尼大倉",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/31223301/pexels-photo-31223301.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "新幹線 + JR 京葉線", route: "三島 ➔ 東京 ➔ 舞濱", duration: "90 mins", stations: ["三島", "熱海", "小田原", "新橫濱", "品川", "東京站", "舞濱"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "東京站轉乘京葉線路程較長，建議預留 15 分鐘步行。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "在離開靜岡前，我們要把早晨留給源兵衛川。踩在清澈湧泉中的石板路上，看著水草隨波擺動，這是三島最溫柔的模樣。中午吃一頓道地的三島鰻魚飯，推薦前往櫻家或京丸。那份細膩與甘甜，會永遠留在你們的味蕾記憶中。帶著富士山的祝福，我們向夢幻的世界進發。當列車抵達舞濱站，迪士尼樂園的城堡映入眼簾。今晚早點休息，夢境即將成真。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "三島 Skywalk", info: "全日最長吊橋，眺望富士全景。", time: "09:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "源兵衛川水上步道", info: "清泉中散步的極致體驗。", time: "12:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "三嶋大社", info: "莊嚴的守護神殿。", time: "14:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "迪士尼單軌電車", info: "奇幻旅程的正式起點。", time: "20:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "Hotel Okura Tokyo Bay", info: "優雅而平穩的住宿選擇。", time: "Check-in" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["三島鰻魚飯", "櫻家", "京丸", "迪士尼甜甜圈", "大倉飯店早餐"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Hotel Okura Tokyo Bay"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 8, date: "2026.06.15 Mon", title: "夢想：回到純真", theme: "Tokyo Disneyland 全日",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/10997649/pexels-photo-10997649.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "飯店接駁巴士", route: "飯店 ➔ 樂園門口", duration: "5 mins", stations: ["飯店門口", "迪士尼單軌站", "東京迪士尼樂園站"], price: "Free", payment: "不需支付。", note: "接駁巴士班次頻密，非常方便。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "今天是屬於夢想的一天。東京迪士尼樂園是一個能讓所有大人變回孩子的地方。蜜月的意義之一，就是找回兩個人最初的純真。在美麗的仙杜瑞拉城堡前擁抱拍照，或是坐上小熊維尼獵蜜記體驗那份甜蜜。下午時分，買個吉拿棒，在長椅上看著 world 各地的笑容。晚上一定要留下來看煙火與燈光秀，當璀璨的光芒劃破夜空，兩個人並肩站著，那一刻會覺得，未來的日子只要有彼此，就像這場煙火一樣閃耀。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "仙杜瑞拉城堡", info: "樂園永恆的中心與背景。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "美女與野獸 城堡奇緣", info: "熱門首選，建議購買 DPA 省時。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "小小世界", info: "溫馨的室內乘船旅行。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "世界市集", info: "充滿復古風格的商店街。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "夜間電子大遊行", info: "絕美燈光秀，迪士尼最浪漫的一刻。", time: "19:30" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["米奇鬆餅", "燻雞火雞腿", "吉拿棒", "藍海灣餐廳", "爆米花桶"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Hotel Okura Tokyo Bay"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 9, date: "2026.06.16 Tue", title: "海洋：冒險之夜", theme: "Tokyo DisneySea ➔ 大井町",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/28505388/pexels-photo-28505388.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "JR 京葉線 + 京濱東北線", route: "舞濱 ➔ 東京 ➔ 大井町", duration: "40 mins", stations: ["舞濱", "新木場", "東京站", "品川", "大井町"], price: "¥310 (約 NT$65)", payment: "Suica 直接感應。", note: "轉乘時注意 JK 藍標線路。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "DisneySea 是為成年人設計的浪漫冒險。地中海港灣的威尼斯貢多拉，讓 Johnny 載著 Sarah 悠遊在運河中，聽著船夫的歌聲。黃昏時分，當阿拉伯海岸的燈火亮起，整座樂園變成了成人專屬的奇幻夢境。晚餐後，我們告別魔法王國，回到生活機能極佳的大井町。這裡的街道更有煙火氣，也是蜜月最後一段行程的安靜據點。這兩天的夢幻，將成為你們一輩子珍藏的膠捲。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "地中海港灣", info: "歐式建築群與精彩的水上表演。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "翱翔：騰空志願", info: "最感人的 4D 飛行體驗。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "威尼斯貢多拉", info: "蜜月必搭，體驗異國水上浪漫。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "美人魚礁湖", info: "充滿幻想色彩的海底世界。", time: "全天" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "大井町飯店", info: "方便的交通與生活機能。", time: "Check-in" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["麥哲倫餐廳", "三眼怪麻糬", "餃子熱狗棒", "阿比修斯餐酒館", "大井町串燒"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "大井町飯店 (大井町站中央口)"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 10, date: "2026.06.17 Wed", title: "童心：森林迷宮", theme: "吉卜力 ➔ HARBS ➔ 吉祥寺",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "JR 京濱東北線 + 中央線快速", route: "大井町 ➔ 品川 ➔ 新宿 ➔ 三鷹", duration: "50 mins", stations: ["大井町", "新宿", "吉祥寺", "三鷹"], price: "¥580 (約 NT$122)", payment: "Suica。", note: "在新宿站注意中央線(橙色標誌)的方向。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "今日走進宮崎駿的奇幻想像。吉卜力美術館不只是展覽，更是一個巨大的藝術裝置。隨後漫步到全東京最宜居的吉祥寺，這裡的步調緩慢而有質感。Sarah 期待已久的 HARBS 水果千層，就在這裡優雅地等待著。每一層奶油與新鮮水果的堆疊，都是職人的堅持。Johnny 可以陪著 Sarah 在井之頭公園看著池邊的新綠。吉祥寺的雜貨小店與這座公園，是這趟蜜月中溫柔而美好的插曲。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "吉卜力美術館", info: "宮崎駿手繪世界的實體化。", time: "10:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "井之頭恩賜公園", info: "適合野餐與森林浴的都會綠洲。", time: "13:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "HARBS 吉祥寺店", info: "Sarah 的甜點夢想清單。", time: "14:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "吉祥寺商店街", info: "各式精緻日系雜貨與生活用品。", time: "16:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "大井町百貨", info: "方便的夜間補貨點。", time: "20:00" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["HARBS", "SATOU 牛肉丸", "吉卜力蘇打水", "草帽咖啡廳熱狗", "一蘭拉麵"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "大井町飯店"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 11, date: "2026.06.18 Thu", title: "潮流：甜點與皮克斯", theme: "I'm donut ? ➔ age,3 ➔ 皮克斯展",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/3411139/pexels-photo-3411139.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "JR + 地鐵綜合移動", route: "大井町 ➔ 澀谷 ➔ 銀座 ➔ 豐洲", duration: "Total 60 mins", stations: ["大井町", "澀谷", "銀座", "豐洲"], price: "¥600 (約 NT$125)", payment: "Suica。", note: "17:30 前須抵達豐洲，請留意下午在銀座的停留時間。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "蜜月的尾聲，是一場關於味覺與視覺的冒險。早上我們先到澀谷排隊，品嚐那口感奇蹟的 I'm donut ?。接著前往銀座，尋找近期熱門的 age,3 炸三明治，酥脆外殼與細膩內餡的組合，是都會感的精緻展現。17:30 準時抵達豐洲。皮克斯世界展正閃爍著勇氣的光芒。在特展中，看著那些動畫背後的創作熱忱，感受藝術與科技的完美結合。今晚的東京灣，風是涼的，心是甜的。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "I'm donut ? 澀谷", info: "口感奇蹟的生甜甜圈排隊店。", time: "10:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "澀谷天空下景觀", info: "東京最具能量的地帶。", time: "12:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "age,3 銀座店", info: "視覺與味覺雙享的炸三明治。", time: "14:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "皮克斯世界展", info: "17:30 準時入場觀賞動畫藝術。", time: "17:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "豐洲 LaLaport 夜景", info: "彩虹大橋下的浪漫散步。", time: "20:00" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["I'm donut ?", "age,3", "銀座木村家", "星巴克海景店", "豐洲市場海鮮"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "大井町飯店"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>day: 12, date: "2026.06.19 Fri", title: "終曲：帶走滿箱的愛", theme: "Yellow 蛋包飯 ➔ 成田二航",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>image: "https://images.pexels.com/photos/4836109/pexels-photo-4836109.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>transport: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ mode: "JR + N'EX (成田特快)", route: "大井町 ➔ 品川 ➔ 成田機場", duration: "90 mins", stations: ["大井町", "品川", "成田", "空港第 2 航廈"], price: "¥3,500 (約 NT$735)", payment: "JR 售票機劃位。", note: "請務必搭乘 13:10 左右 of N'EX，保險抵達機場。" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>description: "蜜月的最後一個早晨，不需要奔波。在大井町飯店旁的商場裡，那盤金黃軟嫩的 Yellow 蛋包飯 是我們給這趟旅程最後的溫柔。Johnny 幫 Sarah 擦掉嘴邊的醬汁，你們相視一笑。行李箱重了許多，除了買給親友的禮物，更多的是這 12 天來對彼此更深的了解與默契。從輕井澤的森林到東京的繁華，每一站都留下了你們並肩的足跡。搭上 N'EX 的那一刻，這不是結束，而是你們故事新章節的開始。",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>spots: [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "大井町 Atré 商場", info: "享用 Yellow 蛋包飯 與最後採買。", time: "10:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "品川車站", info: "東京繁忙節奏的最後窗口。", time: "12:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "成田機場 N'EX", info: "最後一次在座位上整理照片與心情。", time: "13:30" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "成田二航免稅店", info: "機場伴手禮最後衝刺。", time: "15:00" },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ name: "機艙內", info: "16:20 起飛，帶著滿滿愛意回家。", time: "16:20" }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>foods: ["Yellow 蛋包飯", "品川駅弁", "機場最後拉麵", "抹茶拿鐵", "機上餐食"],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>hotel: "Home"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const currentDay = itineraryData[activeDay];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="min-h-screen bg-[#FDFCFB] text-[#5C5C5C] font-sans selection:bg-[#D4CFC7] antialiased"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;header className="relative h-[55vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-[#929D85]"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;img<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>key={currentDay.image}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>src={currentDay.image}<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>className="absolute inset-0 w-full h-full object-cover brightness-75 scale-100 transition-transform duration-[3000ms] animate-slowZoom"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>alt="Honeymoon Cover"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>/&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="relative z-10 text-center text-white px-4 md:px-6"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="mb-3 md:mb-4 tracking-[0.4em] text-[8px] md:text-[10px] uppercase opacity-70"&gt;The 2026 Honeymoon Journal&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow"&gt;SARAH &amp; JOHNNY&lt;/h1&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-[10px] md:text-base font-light tracking-[0.2em] md:tracking-[0.3em] opacity-90 uppercase text-shadow"&gt;Japan. Romantic. Zen.&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="mt-8 md:mt-10 flex justify-center gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-widest"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span className="border-b border-white/40 pb-1"&gt;06.08&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span className="opacity-40"&gt;/&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span className="border-b border-white/40 pb-1"&gt;06.19&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 animate-bounce"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;ChevronDown size={20} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/header&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;nav className="sticky top-0 z-50 bg-[#FDFCFB]/95 backdrop-blur-md border-b border-[#E8E4E0] py-2 md:py-3 shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-5xl mx-auto flex overflow-x-auto px-4 no-scrollbar gap-4 md:gap-5 items-center justify-between touch-pan-x"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>{itineraryData.map((d, idx) =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;button</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>key={idx}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>onClick={() =&gt; { setActiveDay(idx); window.scrollTo({ top: 0, behavior: 'smooth' }); }}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>className={`flex-shrink-0 flex flex-col items-center transition-all duration-300 min-w-[40px] md:min-w-[48px] py-1 ${</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>activeDay === idx ? 'text-[#3E3E3E] scale-105' : 'text-[#A0A0A0] hover:text-[#3E3E3E]'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>}`}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;span className="text-[7px] md:text-[9px] tracking-tighter mb-0.5 opacity-60"&gt;DAY&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;span className={`text-xs md:text-sm font-bold border-b-2 ${activeDay === idx ? 'border-[#8E9775] text-[#8E9775]' : 'border-transparent'}`}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>{idx + 1 &lt; 10 ? `0${idx + 1}` : idx + 1}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/nav&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;main className="max-w-4xl mx-auto py-10 md:py-20 px-5 md:px-8"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="mb-12 md:mb-20 text-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] text-[#9A9A9A] uppercase mb-3 md:mb-4"&gt;{currentDay.date}&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h2 className="text-xl md:text-4xl font-light text-[#3E3E3E] mb-4 md:mb-6 tracking-wide font-serif leading-snug"&gt;{currentDay.title}&lt;/h2&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="w-8 md:w-10 h-[1px] bg-[#D4CFC7] mx-auto mb-4 md:mb-6"&gt;&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest"&gt;{currentDay.theme}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;section className="mb-16 md:mb-24"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="relative px-6 md:px-12 py-10 md:py-16 bg-[#F9F7F5] rounded-[1.5rem] md:rounded-[2.5rem] border border-[#F0EDE9] shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p className="text-sm md:text-lg leading-relaxed text-[#5C5C5C] font-light text-justify tracking-wide italic"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>{renderDescription(currentDay.description)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/section&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;section className="mb-16 md:mb-24"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 className="flex items-center text-[10px] md:text-sm font-bold mb-6 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;Train className="mr-2 md:mr-3 opacity-30" size={16} /&gt; Transport Map</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="space-y-6 md:space-y-10"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>{currentDay.transport.map((t, idx) =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div key={idx} className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2rem] border border-[#E8E4E0] shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex flex-col lg:flex-row gap-8 lg:gap-12"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex-1"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="flex items-center gap-2 text-[#8E9775] mb-4 md:mb-6"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;span className="text-[7px] md:text-[9px] tracking-[0.2em] uppercase font-bold bg-[#F9F7F5] px-2.5 py-1.5 rounded-md border border-[#E8E4E0]"&gt;{t.mode}&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;h4 className="text-lg md:text-2xl font-medium mb-5 md:mb-6 text-[#3E3E3E] font-serif leading-tight"&gt;{t.route}&lt;/h4&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                                                </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>onClick={() =&gt; toggleStations(`${activeDay}-${idx}`)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>className="flex items-center gap-2 text-[8px] md:text-[10px] text-[#9A9A9A] hover:text-[#3E3E3E] transition-colors mb-5 md:mb-6 font-bold tracking-[0.1em]"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>{showStations[`${activeDay}-${idx}`] ? &lt;ChevronUp size={10} /&gt; : &lt;ChevronDown size={10} /&gt;}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>經過站點 ({t.stations.length})</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/button&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>{showStations[`${activeDay}-${idx}`] &amp;&amp; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;div className="mb-4 md:mb-6 p-4 md:p-6 bg-[#FDFCFB] rounded-xl md:rounded-2xl border-l-2 border-[#D4CFC7] animate-fadeIn"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[10px] md:text-[11px] font-light text-[#7C7C7C]"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>{t.stations.map((s, sIdx) =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;li key={sIdx} className="flex items-center gap-2 md:gap-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;span className="w-1 h-1 rounded-full bg-[#D4CFC7]"&gt;&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>{s}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/li&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/ul&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>)}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="grid grid-cols-2 gap-4 md:gap-6"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1"&gt;Fare&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;p className="text-[10px] md:text-sm font-medium"&gt;{t.price}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1"&gt;Duration&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;p className="text-[10px] md:text-sm font-medium"&gt;{t.duration}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="lg:w-1/3 bg-[#FDFCFB] p-6 md:p-8 rounded-xl md:rounded-2xl border border-[#F0EDE9] flex flex-col justify-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="flex items-center gap-2 mb-3 md:mb-4 text-[#3E3E3E] font-bold text-[8px] md:text-[10px] uppercase tracking-widest"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;CreditCard size={14} /&gt; Guide</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;p className="text-[9px] md:text-[11px] leading-relaxed text-[#9A9A9A] mb-3 md:mb-4 font-light"&gt;{t.payment}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;p className="text-[9px] md:text-[10px] italic text-[#8E9775] font-bold"&gt;※ {t.note}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/section&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-24"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;section&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h3 className="flex items-center text-[10px] md:text-sm font-bold mb-8 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Camera className="mr-2 md:mr-3 opacity-30" size={16} /&gt; The Spots</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="space-y-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>{currentDay.spots.map((s, idx) =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div key={idx} className="bg-white p-5 md:p-6 rounded-xl md:rounded-2xl border border-[#E8E4E0] shadow-sm group hover:border-[#8E9775]/30 transition-all"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex justify-between items-start mb-2.5"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;h4 className="text-xs md:text-base font-medium text-[#3E3E3E] group-hover:text-[#8E9775] transition-colors font-serif"&gt;{s.name}&lt;/h4&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;span className="text-[8px] md:text-[9px] text-[#9A9A9A] font-bold whitespace-nowrap ml-2"&gt;{s.time}&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;p className="text-[9px] md:text-[11px] text-[#9A9A9A] font-light leading-relaxed"&gt;{s.info}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/section&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;section&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h3 className="flex items-center text-[10px] md:text-sm font-bold mb-8 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Utensils className="mr-2 md:mr-3 opacity-30" size={16} /&gt; The Palette</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="space-y-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>{currentDay.foods.map((f, idx) =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div key={idx} className="flex items-center gap-4 bg-white p-4 md:p-5 rounded-xl md:rounded-2xl border border-transparent hover:border-[#E8E4E0] transition-all hover:bg-[#F9F7F5] group shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;span className="text-[8px] md:text-[10px] font-bold text-[#D4CFC7] group-hover:text-[#8E9775]"&gt;0{idx + 1}&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;span className="text-[10px] md:text-sm font-light text-[#5C5C5C] tracking-widest leading-tight"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>{renderDescription(f)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="mt-8 md:mt-10 p-8 md:p-10 bg-[#FDFCFB] rounded-[1.5rem] md:rounded-[2.5rem] border-2 border-dashed border-[#E8E4E0] text-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Coffee className="mx-auto mb-3 md:mb-4 text-[#D4CFC7]" size={20} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;p className="text-[9px] md:text-[11px] italic text-[#9A9A9A] tracking-wider"&gt;Moments captured in flavors.&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/section&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="bg-white p-8 md:p-16 rounded-[1.5rem] md:rounded-[3rem] text-center border border-[#E8E4E0] relative group overflow-hidden shadow-sm mb-12"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="absolute top-0 left-0 w-full h-1.5 bg-[#8E9775]/20"&gt;&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-[8px] md:text-[10px] text-[#9A9A9A] mb-3 md:mb-4 uppercase tracking-[0.4em]"&gt;Home for the night&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h4 className="text-xl md:text-3xl font-light text-[#3E3E3E] flex items-center justify-center gap-3 md:gap-4 font-serif"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;MapPin size={22} className="text-[#D4CFC7]" /&gt; {currentDay.hotel}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex justify-between mt-12 md:mt-24 pt-8 md:pt-12 border-t border-[#E8E4E0]"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>disabled={activeDay === 0}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>onClick={() =&gt; { setActiveDay(prev =&gt; prev - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;ChevronLeft size={16} /&gt; Previous</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>disabled={activeDay === itineraryData.length - 1}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>onClick={() =&gt; { setActiveDay(prev =&gt; prev + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Next &lt;ChevronRight size={16} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/main&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;footer className="bg-[#3E3E3E] text-[#D4CFC7] py-20 md:py-32 px-6 md:px-12 text-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-xl mx-auto"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="text-[9px] md:text-[11px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]"&gt;Sarah &amp; Johnny&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-[10px] md:text-[13px] tracking-[0.2em] md:tracking-[0.25em] leading-relaxed mb-10 md:mb-16 opacity-75 uppercase font-light"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Designed with love for a lifelong adventure.&lt;br/&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>A collection of quiet moments in the heart of Japan.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex justify-center gap-10 md:gap-14 text-white/10 mb-10 md:mb-16"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;Waves size={20} className="hover:text-[#8E9775] transition-colors" /&gt;<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;Mountain size={20} className="hover:text-[#8E9775] transition-colors" /&gt;<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;Sparkles size={20} className="hover:text-[#8E9775] transition-colors" /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-[7px] md:text-[9px] opacity-30 tracking-[0.3em] md:tracking-[0.4em]"&gt;© 2026 HONEYMOON ARCHIVE | FOREVER &amp; ALWAYS&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/footer&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>root.render(&lt;App /&gt;);</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="bg-[#FDFCFB]">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // 建立一個圖示組件，確保在 CDN 環境下也能穩定顯示
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const App = () => {
+            const [activeDay, setActiveDay] = useState(0);
+            const [showStations, setShowStations] = useState({});
+
+            const toggleStations = (idx) => {
+                setShowStations(prev => ({ ...prev, [idx]: !prev[idx] }));
+            };
+
+            const boldKeywords = [
+                "Indigo 飯店餐廳", "20:15 的飯店餐廳", "利久牛舌", "HARBS", "I'm donut ?", 
+                "age,3", "Yellow 蛋包飯", "川上庵", "丸山咖啡", "淺野屋", "熱海布丁", 
+                "三島鰻魚飯", "櫻家", "京丸", "星野溫泉", "吉卜力美術館", "皮克斯世界展"
+            ];
+
+            const renderDescription = (text) => {
+                if (!text) return "";
+                const cleanText = text.replace(/\*\*/g, '');
+                let parts = [cleanText];
+                boldKeywords.forEach(keyword => {
+                    let newParts = [];
+                    parts.forEach(part => {
+                        if (typeof part === 'string') {
+                            const splitPart = part.split(keyword);
+                            for (let i = 0; i < splitPart.length; i++) {
+                                newParts.push(splitPart[i]);
+                                if (i < splitPart.length - 1) {
+                                    newParts.push(<span key={keyword + i} className="font-bold text-[#4A5D4E] border-b border-[#A7B09E]/40">{keyword}</span>);
+                                }
+                            }
+                        } else {
+                            newParts.push(part);
+                        }
+                    });
+                    parts = newParts;
+                });
+                return parts;
+            };
+
+            const itineraryData = [
+                {
+                    day: 1, date: "2026.06.08 Mon", title: "初抵：森林的呼吸", theme: "成田二航 ➔ 輕井澤 Indigo",
+                    image: "https://images.pexels.com/photos/3017093/pexels-photo-3017093.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "N'EX (成田特快)", route: "成田機場(T2) ➔ 東京站", duration: "60 mins", stations: ["空港第 2 航廈", "成田", "佐倉", "四街道", "千葉", "船橋", "錦糸町", "東京站"], price: "¥3,070 (約 NT$645)", payment: "機場 B1 JR 櫃檯劃位，可刷 Visa/MasterCard。", note: "全車指定席，抵達二航後下 B1 辦理即可。" },
+                        { mode: "北陸新幹線", route: "東京站 ➔ 輕井澤站", duration: "75 mins", stations: ["東京", "上野", "大宮", "高崎", "安中榛名", "輕井澤"], price: "¥6,020 (約 NT$1,265)", payment: "售票機或 Smart EX APP。", note: "由東京站南轉乘口進入，轉乘時間建議留 20 分鐘。" }
+                    ],
+                    description: "Sarah 和 Johnny 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐。不需要奔波，只需將彼此調整到「度假模式」，在森林的呼吸聲中入眠。",
+                    spots: [
+                        { name: "成田機場第二航廈", info: "抵達並辦理 N'EX 乘車手續。", time: "15:05 落地" },
+                        { name: "東京站紅磚區", info: "文藝復興式建築，東京的永恆經典。", time: "16:30" },
+                        { name: "輕井澤車站", info: "森林之旅的入口，氛圍靜謐。", time: "17:45" },
+                        { name: "Hotel Indigo 輕井澤", info: "莫蘭迪灰綠色調的設計飯店。", time: "Check-in" },
+                        { name: "飯店餐廳預約", info: "20:15 的飯店餐廳，開啟浪漫序章。", time: "20:15" }
+                    ],
+                    foods: ["Indigo 飯店餐廳", "信州高原牛奶", "精釀麥酒", "輕食餐盒", "輕井澤限定小食"],
+                    hotel: "Hotel Indigo Karuizawa"
+                },
+                {
+                    day: 2, date: "2026.06.09 Tue", title: "散冊：單車上的文學", theme: "雲場池 ➔ 舊輕井澤",
+                    image: "https://images.pexels.com/photos/27896698/pexels-photo-27896698.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "電動助動力單車", route: "輕井澤站北口周邊租借", duration: "Full Day", stations: ["車站北口", "雲場池", "舊輕井澤銀座通", "聖保羅教堂"], price: "¥1,500 - ¥2,500 (約 NT$315 - $525)", payment: "現場現金支付或 Paypay。", note: "強烈建議選電動型，讓優雅不被坡道打擾。" }
+                    ],
+                    description: "跨上單車，Sarah 的長裙在初夏的微風中輕輕擺動，Johnny 在身後捕捉這如電影般的瞬間。雲場池的池水呈現出一種深邃的灰綠色，池邊的倒影靜謐得讓人不忍呼吸。漫步在舊輕井澤銀座通，走進那些充滿質感的果醬老店，在聖保羅教堂的木造屋頂下，感受那份神聖而純粹的平靜。這一天，輕井澤的風、單車的齒輪聲、以及你們的笑聲，構成了最美的蜜月練習曲。",
+                    spots: [
+                        { name: "雲場池", info: "被稱為天鵝湖，絕美的莫蘭迪綠湖景。", time: "10:00" },
+                        { name: "舊輕井澤銀座通", info: "文青雜貨與手工果醬的聚集地。", time: "12:00" },
+                        { name: "聖保羅天主教堂", info: "木造建築，輕井澤的靈魂景點。", time: "14:30" },
+                        { name: "蕭紀念禮拜堂", info: "隱身在森林深處的純白空間。", time: "16:00" },
+                        { name: "林蔭小道", info: "適合停下單車拍一張文青風格合照。", time: "隨時" }
+                    ],
+                    foods: ["淺野屋麵包", "澤屋果醬", "Mikado 摩卡霜淇淋", "茜屋精品咖啡", "腸詰屋手工香腸"],
+                    hotel: "Hotel Indigo Karuizawa"
+                },
+                {
+                    day: 3, date: "2026.06.10 Wed", title: "慢活：石之誓約", theme: "石之教堂 ➔ 榆樹街小鎮",
+                    image: "https://images.pexels.com/photos/36018204/pexels-photo-36018204.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "星野接駁巴士", route: "輕井澤站南口 ➔ 星野區域", duration: "15 mins", stations: ["輕井澤站", "中輕井澤", "星野渡假區", "榆樹街小鎮"], price: "¥400 (約 NT$84)", payment: "Suica 或 現金。", note: "班次約每小時 1-2 班，建議先下載時刻表。" }
+                    ],
+                    description: "今日走入建築大師的異想世界。石之教堂將石頭、玻璃與光影交織，象徵兩人的愛情如石般堅毅、如光般剔透。隨後漫步在榆樹街小鎮，這是在樹林中搭建的木質露台。聽著身旁溪流的潺潺聲，點一杯丸山咖啡。傍晚在星野溫泉中洗去疲憊，最後以一碗熱騰騰的川上庵蕎麥麵為輕井澤之旅畫下溫柔的句點。這是一種簡約與質感的碰撞，屬於你們的慢活節奏。",
+                    spots: [
+                        { name: "石之教堂", info: "無縫接軌自然的奇蹟建築。", time: "11:00" },
+                        { name: "星野高原教會", info: "充滿祈願與祝福的木造教堂。", time: "13:00" },
+                        { name: "榆樹街小鎮", info: "森林中15家美學店舖。", time: "14:30" },
+                        { name: "星野溫泉 蜻蜓之湯", info: "露天森林浴場。", time: "16:30" },
+                        { name: "村民食堂", info: "精緻的定食選擇。", time: "18:00" }
+                    ],
+                    foods: ["川上庵", "丸山咖啡", "和菓子 菜之花", "高原起司蛋糕", "純鮮乳 Gelato"],
+                    hotel: "Hotel Indigo Karuizawa"
+                },
+                {
+                    day: 4, date: "2026.06.11 Thu", title: "移動：牛舌的香氣", theme: "Outlet ➔ 利久牛舌 ➔ 三島",
+                    image: "https://images.pexels.com/photos/16700785/pexels-photo-16700785.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "北陸新幹線", route: "輕井澤 ➔ 東京站", duration: "75 mins", stations: ["輕井澤", "高崎", "熊谷", "大宮", "上野", "東京"], price: "¥6,020 (約 NT$1,265)", payment: "售票機購票。", note: "中午抵達東京後，直奔一番街品嚐利久牛舌。" },
+                        { mode: "東海道新幹線", route: "東京站 ➔ 三島站", duration: "55 mins", stations: ["東京", "品川", "新橫濱", "小田原", "熱海", "三島"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "選擇藍標東海道線，體驗新幹線的極速。" }
+                    ],
+                    description: "在離開輕井澤前，最後的購物衝刺留給 Outlet。午後搭上新幹線，回到樞紐東京站。這不僅是移動，更是一場味蕾的補給。Sarah 期待已久的利久牛舌，那厚實、焦香、彈牙的口感，是東京最令人懷念的味道。隨後轉乘東海道新幹線向南行駛，富士山的輪廓在夕陽中漸漸清晰。入住三島飯店，在頂樓浴場看著窗外的城市點點燈火，那是屬於蜜月中段的浪漫轉場。",
+                    spots: [
+                        { name: "輕井澤王子 Outlet", info: "精品採購與最後補貨。", time: "10:00" },
+                        { name: "東京站一番街", info: "品嚐利久牛舌的最佳地點。", time: "13:30" },
+                        { name: "三島車站南口", info: "乾淨、安靜的富士門戶。", time: "16:00" },
+                        { name: "三島東急飯店", info: "極簡質感的客房。", time: "Check-in" },
+                        { name: "頂樓展望浴場", info: "享受富士山下的暖湯。", time: "21:00" }
+                    ],
+                    foods: ["利久牛舌", "三島馬鈴薯餅", "靜岡焙茶", "東京芭娜娜", "飯店特調酒品"],
+                    hotel: "富士山三島東急飯店"
+                },
+                {
+                    day: 5, date: "2026.06.12 Fri", title: "神聖：箱根神社", theme: "蘆之湖 ➔ 海賊船 ➔ 大涌谷",
+                    image: "https://images.pexels.com/photos/10698490/pexels-photo-10698490.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "東海巴士 (元箱根港線)", route: "三島站南口 ➔ 元箱根港", duration: "50 mins", stations: ["三島站南口", "三島 Skywalk", "山中城跡", "箱根峠", "元箱根港"], price: "¥1,100 (約 NT$231)", payment: "Suica / 現金。", note: "飯店門口站牌上車，直達蘆之湖畔。" },
+                        { mode: "箱根海賊船", route: "元箱根港 ➔ 桃源台", duration: "30 mins", stations: ["元箱根港", "箱根町港", "桃源台港"], price: "¥1,200 (約 NT$250)", payment: "自動售票機。", note: "二樓甲板是拍富士山的絕佳位置。" }
+                    ],
+                    description: "今日是山與海的對話。蘆之湖的湖水藍得深邃，箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Sarah 和 Johnny 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆溫熱的黑蛋，據說能延壽七年，也就是能再陪彼此走過更多歲月。這是一場日式莊嚴與浪漫童話的結合。",
+                    spots: [
+                        { name: "箱根神社 水中鳥居", info: "水中紅色鳥居，必拍地標。", time: "10:30" },
+                        { name: "蘆之湖海賊船", info: "華麗的歐式船隻，體驗海賊浪漫。", time: "12:00" },
+                        { name: "箱根空中纜車", info: "俯瞰蘆之湖全景的最佳視擊。", time: "13:30" },
+                        { name: "大涌谷", info: "感受地殼溫度的火山景觀。", time: "15:00" },
+                        { name: "桃源台港", info: "安靜的小港口，適合漫步。", time: "16:30" }
+                    ],
+                    foods: ["大涌谷黑蛋", "箱根手工蕎麥", "蘆之湖戚風蛋糕", "溫泉小饅頭", "三島在地美食"],
+                    hotel: "富士山三島東急飯店"
+                },
+                {
+                    day: 6, date: "2026.06.13 Sat", title: "復古：熱海的午後", theme: "來宮神社 ➔ ACAO 森林",
+                    image: "https://images.pexels.com/photos/31204726/pexels-photo-31204726.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "JR 東海道本線", route: "三島站 ➔ 熱海站", duration: "14 mins", stations: ["三島", "函南", "熱海"], price: "¥330 (約 NT$70)", payment: "Suica 直接感應。", note: "車次極多，隨到隨搭。" },
+                        { mode: "市內公車", route: "熱海站 ➔ ACAO FOREST", duration: "15 mins", stations: ["熱海站", "お宮の松", "親水公園", "ACAO FOREST"], price: "¥250/次", payment: "現金 / Suica。", note: "巴士沿著熱海灣行駛，海景非常開闊。" }
+                    ],
+                    description: "熱海，一個讓時間慢下來的濱海城市。先在來宮神社的大樟樹下繞行，為這段婚姻祈求長久的福份。接著前往 ACAO FOREST，這是一個建在懸崖邊的花園，隈研吾設計的 COEDA HOUSE 咖啡廳完全由木榫接而成，從玻璃窗望出去，大海與森林交織成最優雅的背景。下午在親水公園走走，喝一瓶復古的熱海布丁，那種微甜的滋味，就是這趟旅程最溫柔的點綴。",
+                    spots: [
+                        { name: "來宮神社", info: "2000 年神木，熱海最強能量點。", time: "09:30" },
+                        { name: "ACAO FOREST", info: "世界級建築師隈研吾打造的空中花園。", time: "11:00" },
+                        { name: "COEDA HOUSE", info: "絕美海景咖啡廳，拍照首選。", time: "13:00" },
+                        { name: "熱海親水公園", info: "蔚藍海岸與白色長廊。", time: "15:00" },
+                        { name: "熱海銀座商店街", info: "尋找熱海布丁與懷舊老街氣息。", time: "16:30" }
+                    ],
+                    foods: ["熱海布丁", "伊豆海鮮丼", "COEDA 特調飲品", "靜岡煎茶", "熱海小吃"],
+                    hotel: "富士山三島東急飯店"
+                },
+                {
+                    day: 7, date: "2026.06.14 Sun", title: "轉身：夢幻的世界", theme: "三島慢活 ➔ 迪士尼大倉",
+                    image: "https://images.pexels.com/photos/31223301/pexels-photo-31223301.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "新幹線 + JR 京葉線", route: "三島 ➔ 東京 ➔ 舞濱", duration: "90 mins", stations: ["三島", "熱海", "小田原", "新橫濱", "品川", "東京站", "舞濱"], price: "¥4,600 (約 NT$965)", payment: "Smart EX / 售票機。", note: "東京站轉乘京葉線路程較長，建議預留 15 分鐘步行。" }
+                    ],
+                    description: "在離開靜岡前，我們要把早晨留給源兵衛川。踩在清澈湧泉中的石板路上，看著水草隨波擺動，這是三島最溫柔的模樣。中午吃一頓道地的三島鰻魚飯，推薦前往櫻家或京丸。那份細膩與甘甜，會永遠留在你們的味蕾記憶中。帶著富士山的祝福，我們向夢幻的世界進發。當列車抵達舞濱站，迪士尼樂園的城堡映入眼簾。今晚早點休息，夢境即將成真。",
+                    spots: [
+                        { name: "三島 Skywalk", info: "全日最長吊橋，眺望富士全景。", time: "09:30" },
+                        { name: "源兵衛川", info: "清泉中散步的極致體驗。", time: "12:00" },
+                        { name: "三嶋大社", info: "莊嚴的守護神殿。", time: "14:30" },
+                        { name: "迪士尼單軌電車", info: "奇幻旅程的正式起點。", time: "20:00" },
+                        { name: "Hotel Okura Tokyo Bay", info: "優雅而平穩的住宿選擇。", time: "Check-in" }
+                    ],
+                    foods: ["三島鰻魚飯", "櫻家", "京丸", "迪士尼甜甜圈", "大倉飯店早餐"],
+                    hotel: "Hotel Okura Tokyo Bay"
+                },
+                {
+                    day: 8, date: "2026.06.15 Mon", title: "夢想：回到純真", theme: "Tokyo Disneyland 全日",
+                    image: "https://images.pexels.com/photos/10997649/pexels-photo-10997649.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "飯店接駁巴士", route: "飯店 ➔ 樂園門口", duration: "5 mins", stations: ["飯店門口", "迪士尼單軌站", "東京迪士尼樂園站"], price: "Free", payment: "不需支付。", note: "接駁巴士班次頻密，非常方便。" }
+                    ],
+                    description: "今天是屬於夢想的一天。東京迪士尼樂園是一個能讓所有大人變回孩子的地方。蜜月的意義之一，就是找回兩個人最初的純真。在美麗的仙杜瑞拉城堡前擁抱拍照，或是坐上小熊維尼獵蜜記體驗那份甜蜜。下午時分，買個吉拿棒，在長椅上看著 world 各地的笑容。晚上一定要留下來看煙火與燈光秀，當璀璨的光芒劃破夜空，兩個人並肩站著，那一刻會覺得，未來的日子只要有彼此，就像這場煙火一樣閃耀。",
+                    spots: [
+                        { name: "仙杜瑞拉城堡", info: "樂園永恆的中心與背景。", time: "全天" },
+                        { name: "美女與野獸 城堡奇緣", info: "熱門首選，建議購買 DPA 省時。", time: "全天" },
+                        { name: "小小世界", info: "溫馨的室內乘船旅行。", time: "全天" },
+                        { name: "世界市集", info: "充滿復古風格的商店街。", time: "全天" },
+                        { name: "夜間電子大遊行", info: "絕美燈光秀，迪士尼最浪漫的一刻。", time: "19:30" }
+                    ],
+                    foods: ["米奇鬆餅", "燻雞火雞腿", "吉拿棒", "藍海灣餐廳", "爆米花桶"],
+                    hotel: "Hotel Okura Tokyo Bay"
+                },
+                {
+                    day: 9, date: "2026.06.16 Tue", title: "海洋：冒險之夜", theme: "Tokyo DisneySea ➔ 大井町",
+                    image: "https://images.pexels.com/photos/28505388/pexels-photo-28505388.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "JR 京葉線 + 京濱東北線", route: "舞濱 ➔ 東京 ➔ 大井町", duration: "40 mins", stations: ["舞濱", "新木場", "東京站", "品川", "大井町"], price: "¥310 (約 NT$65)", payment: "Suica 直接感應。", note: "轉乘時注意 JK 藍標線路。" }
+                    ],
+                    description: "DisneySea 是為成年人設計的浪漫冒險。地中海港灣的威尼斯貢多拉，讓 Johnny 載著 Sarah 悠遊在運河中，聽著船夫的歌聲。黃昏時分，當阿拉伯海岸的燈火亮起，整座樂園變成了成人專屬的奇幻夢境。晚餐後，我們告別魔法王國，回到生活機能極佳的大井町。這裡的街道更有煙火氣，也是蜜月最後一段行程的安靜據點。這兩天的夢幻，將成為你們一輩子珍藏的膠捲。",
+                    spots: [
+                        { name: "地中海港灣", info: "歐式建築群與精彩的水上表演。", time: "全天" },
+                        { name: "翱翔：騰空志願", info: "最感人的 4D 飛行體驗。", time: "全天" },
+                        { name: "威尼斯貢多拉", info: "蜜月必搭，體驗異國水上浪漫。", time: "全天" },
+                        { name: "美人魚礁湖", info: "充滿幻想色彩的海底世界。", time: "全天" },
+                        { name: "大井町飯店", info: "方便的交通與生活機能。", time: "Check-in" }
+                    ],
+                    foods: ["麥哲倫餐廳", "三眼怪麻糬", "餃子熱狗棒", "阿比修斯餐酒館", "大井町串燒"],
+                    hotel: "大井町飯店 (大井町站中央口)"
+                },
+                {
+                    day: 10, date: "2026.06.17 Wed", title: "童心：森林迷宮", theme: "吉卜力 ➔ HARBS ➔ 吉祥寺",
+                    image: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "JR 京濱東北線 + 中央線快速", route: "大井町 ➔ 品川 ➔ 新宿 ➔ 三鷹", duration: "50 mins", stations: ["大井町", "新宿", "吉祥寺", "三鷹"], price: "¥580 (約 NT$122)", payment: "Suica。", note: "在新宿站注意中央線(橙色標誌)的方向。" }
+                    ],
+                    description: "今日走進宮崎駿的奇幻想像。吉卜力美術館不只是展覽，更是一個巨大的藝術裝置。隨後漫步到全東京最宜居的吉祥寺，這裡的步調緩慢而有質感。Sarah 期待已久的 HARBS 水果千層，就在這裡優雅地等待著。每一層奶油與新鮮水果的堆疊，都是職人的堅持。Johnny 可以陪著 Sarah 在井之頭公園看著池邊的新綠。吉祥寺的雜貨小店與這座公園，是這趟蜜月中溫柔而美好的插曲。",
+                    spots: [
+                        { name: "吉卜力美術館", info: "宮崎駿手繪世界的實體化。", time: "10:00" },
+                        { name: "井之頭恩賜公園", info: "適合野餐與森林浴的都會綠洲。", time: "13:00" },
+                        { name: "HARBS 吉祥寺店", info: "Sarah 的甜點夢想清單。", time: "14:30" },
+                        { name: "吉祥寺商店街", info: "各式精緻日系雜貨與生活用品。", time: "16:00" },
+                        { name: "大井町百貨", info: "方便的夜間補貨點。", time: "20:00" }
+                    ],
+                    foods: ["HARBS", "SATOU 牛肉丸", "吉卜力蘇打水", "草帽咖啡廳熱狗", "一蘭拉麵"],
+                    hotel: "大井町飯店"
+                },
+                {
+                    day: 11, date: "2026.06.18 Thu", title: "潮流：甜點與皮克斯", theme: "I'm donut ? ➔ age,3 ➔ 皮克斯展",
+                    image: "https://images.pexels.com/photos/3411139/pexels-photo-3411139.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "JR + 地鐵綜合移動", route: "大井町 ➔ 澀谷 ➔ 銀座 ➔ 豐洲", duration: "Total 60 mins", stations: ["大井町", "澀谷", "銀座", "豐洲"], price: "¥600 (約 NT$125)", payment: "Suica。", note: "17:30 前須抵達豐洲，請留意下午在銀座的停留時間。" }
+                    ],
+                    description: "蜜月的尾聲，是一場關於味覺與視覺的冒險。早上我們先到澀谷排隊，品嚐那口感奇蹟的 I'm donut ?。接著前往銀座，尋找近期熱門的 age,3 炸三明治，酥脆外殼與細膩內餡的組合，是都會感的精緻展現。17:30 準時抵達豐洲。皮克斯世界展正閃爍著勇氣的光芒。在特展中，看著那些動畫背後的創作熱忱，感受藝術與科技的完美結合。今晚的東京灣，風是涼的，心是甜的。",
+                    spots: [
+                        { name: "I'm donut ? 澀谷", info: "口感奇蹟的生甜甜圈排隊店。", time: "10:30" },
+                        { name: "澀谷天空下景觀", info: "東京最具能量的地帶。", time: "12:00" },
+                        { name: "age,3 銀座店", info: "視覺與味覺雙享的炸三明治。", time: "14:30" },
+                        { name: "皮克斯世界展", info: "17:30 準時入場觀賞動畫藝術。", time: "17:30" },
+                        { name: "豐洲 LaLaport 夜景", info: "彩虹大橋下的浪漫散步。", time: "20:00" }
+                    ],
+                    foods: ["I'm donut ?", "age,3", "銀座木村家", "星巴克海景店", "豐洲市場海鮮"],
+                    hotel: "大井町飯店"
+                },
+                {
+                    day: 12, date: "2026.06.19 Fri", title: "終曲：帶走滿箱的愛", theme: "Yellow 蛋包飯 ➔ 成田二航",
+                    image: "https://images.pexels.com/photos/4836109/pexels-photo-4836109.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    transport: [
+                        { mode: "JR + N'EX (成田特快)", route: "大井町 ➔ 品川 ➔ 成田機場", duration: "90 mins", stations: ["大井町", "品川", "成田", "空港第 2 航廈"], price: "¥3,500 (約 NT$735)", payment: "JR 售票機劃位。", note: "請務必搭乘 13:10 左右 of N'EX，保險抵達機場。" }
+                    ],
+                    description: "蜜月的最後一個早晨，不需要奔波。在大井町飯店旁的商場裡，那盤金黃軟嫩的 Yellow 蛋包飯 是我們給這趟旅程最後的溫柔。Johnny 幫 Sarah 擦掉嘴邊的醬汁，你們相視一笑。行李箱重了許多，除了買給親友的禮物，更多的是這 12 天來對彼此更深的了解與默契。從輕井澤的森林到東京的繁華，每一站都留下了你們並肩的足跡。搭上 N'EX 的那一刻，這不是結束，而是你們故事新章節的開始。",
+                    spots: [
+                        { name: "大井町 Atré 商場", info: "享用 Yellow 蛋包飯 與最後採買。", time: "10:30" },
+                        { name: "品川車站", info: "東京繁忙節奏的最後窗口。", time: "12:30" },
+                        { name: "成田機場 N'EX", info: "最後一次在座位上整理照片與心情。", time: "13:30" },
+                        { name: "成田二航免稅店", info: "機場伴手禮最後衝刺。", time: "15:00" },
+                        { name: "機艙內", info: "16:20 起飛，帶著滿滿愛意回家。", time: "16:20" }
+                    ],
+                    foods: ["Yellow 蛋包飯", "品川駅弁", "機場最後拉麵", "抹茶拿鐵", "機上餐食"],
+                    hotel: "Home"
+                }
+            ];
+
+            const currentDay = itineraryData[activeDay];
+
+            return (
+                <div className="min-h-screen bg-[#FDFCFB] text-[#5C5C5C] font-sans selection:bg-[#D4CFC7] antialiased overflow-x-hidden">
+                    <header className="relative h-[45vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-[#929D85]">
+                        <img 
+                            key={currentDay.image}
+                            src={currentDay.image} 
+                            className="absolute inset-0 w-full h-full object-cover brightness-75 scale-100 transition-transform duration-[3000ms] animate-slowZoom"
+                            alt="Honeymoon Cover"
+                        />
+                        <div className="relative z-10 text-center text-white px-4 md:px-6">
+                            <div className="mb-3 md:mb-4 tracking-[0.4em] text-[8px] md:text-[10px] uppercase opacity-70">The 2026 Honeymoon Journal</div>
+                            <h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow">SARAH & JOHNNY</h1>
+                            <p className="text-[10px] md:text-base font-light tracking-[0.2em] md:tracking-[0.3em] opacity-90 uppercase text-shadow">Japan. Romantic. Zen.</p>
+                            <div className="mt-8 md:mt-10 flex justify-center gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-widest">
+                                <span className="border-b border-white/40 pb-1">06.08</span>
+                                <span className="opacity-40">/</span>
+                                <span className="border-b border-white/40 pb-1">06.19</span>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+                            <Icon name="chevron-down" size={24} />
+                        </div>
+                    </header>
+
+                    <nav className="sticky top-0 z-50 bg-[#FDFCFB]/95 backdrop-blur-md border-b border-[#E8E4E0] py-1 md:py-3 shadow-sm overflow-x-auto no-scrollbar">
+                        <div className="max-w-5xl mx-auto flex px-4 gap-4 md:gap-5 items-center justify-between touch-pan-x min-w-max md:min-w-0">
+                            {itineraryData.map((d, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => { setActiveDay(idx); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                    className={`flex-shrink-0 flex flex-col items-center transition-all duration-300 min-w-[40px] md:min-w-[48px] py-2 ${
+                                        activeDay === idx ? 'text-[#3E3E3E] scale-110' : 'text-[#A0A0A0] hover:text-[#3E3E3E]'
+                                    }`}
+                                >
+                                    <span className="text-[7px] md:text-[9px] tracking-tighter mb-0.5 opacity-60">DAY</span>
+                                    <span className={`text-xs md:text-sm font-bold border-b-2 ${activeDay === idx ? 'border-[#8E9775] text-[#8E9775]' : 'border-transparent'}`}>
+                                        {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                    </nav>
+
+                    <main className="max-w-4xl mx-auto py-10 md:py-20 px-5 md:px-8">
+                        <div className="mb-12 md:mb-20 text-center">
+                            <div className="text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] text-[#9A9A9A] uppercase mb-3 md:mb-4">{currentDay.date}</div>
+                            <h2 className="text-xl md:text-4xl font-light text-[#3E3E3E] mb-4 md:mb-6 tracking-wide font-serif leading-snug">{currentDay.title}</h2>
+                            <div className="w-8 md:w-10 h-[1px] bg-[#D4CFC7] mx-auto mb-4 md:mb-6"></div>
+                            <p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest">{currentDay.theme}</p>
+                        </div>
+
+                        <section className="mb-16 md:mb-24">
+                            <div className="relative px-6 md:px-12 py-10 md:py-16 bg-[#F9F7F5] rounded-[1.5rem] md:rounded-[2.5rem] border border-[#F0EDE9] shadow-sm">
+                                <p className="text-sm md:text-lg leading-relaxed text-[#5C5C5C] font-light text-justify tracking-wide italic">
+                                    {renderDescription(currentDay.description)}
+                                </p>
+                            </div>
+                        </section>
+
+                        <section className="mb-16 md:mb-24">
+                            <h3 className="flex items-center text-[10px] md:text-sm font-bold mb-6 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase">
+                                <Icon name="train" size={16} className="mr-2 opacity-30" /> Transport Map
+                            </h3>
+                            <div className="space-y-6 md:space-y-10">
+                                {currentDay.transport.map((t, idx) => (
+                                    <div key={idx} className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2rem] border border-[#E8E4E0] shadow-sm">
+                                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-2 text-[#8E9775] mb-4 md:mb-6">
+                                                    <span className="text-[7px] md:text-[9px] tracking-[0.2em] uppercase font-bold bg-[#F9F7F5] px-2.5 py-1.5 rounded-md border border-[#E8E4E0]">{t.mode}</span>
+                                                </div>
+                                                <h4 className="text-lg md:text-2xl font-medium mb-5 md:mb-6 text-[#3E3E3E] font-serif leading-tight">{t.route}</h4>
+                                                
+                                                <button 
+                                                    onClick={() => toggleStations(`${activeDay}-${idx}`)}
+                                                    className="flex items-center gap-2 text-[8px] md:text-[10px] text-[#9A9A9A] hover:text-[#3E3E3E] transition-colors mb-5 md:mb-6 font-bold tracking-[0.1em]"
+                                                >
+                                                    <Icon name={showStations[`${activeDay}-${idx}`] ? "chevron-up" : "chevron-down"} size={10} />
+                                                    經過站點 ({t.stations.length})
+                                                </button>
+
+                                                {showStations[`${activeDay}-${idx}`] && (
+                                                    <div className="mb-6 md:mb-8 p-4 md:p-6 bg-[#FDFCFB] rounded-xl md:rounded-2xl border-l-2 border-[#D4CFC7] animate-fadeIn">
+                                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[10px] md:text-[11px] font-light text-[#7C7C7C]">
+                                                            {t.stations.map((s, sIdx) => (
+                                                                <li key={sIdx} className="flex items-center gap-2 md:gap-3">
+                                                                    <span className="w-1 h-1 rounded-full bg-[#D4CFC7]"></span>
+                                                                    {s}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+
+                                                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
+                                                        <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Fare</p>
+                                                        <p className="text-[10px] md:text-sm font-medium">{t.price}</p>
+                                                    </div>
+                                                    <div className="bg-[#F9F7F5] p-4 md:p-5 rounded-xl text-center md:text-left">
+                                                        <p className="text-[7px] md:text-[8px] text-[#9A9A9A] uppercase tracking-widest mb-1">Duration</p>
+                                                        <p className="text-[10px] md:text-sm font-medium">{t.duration}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="lg:w-1/3 bg-[#FDFCFB] p-6 md:p-8 rounded-xl md:rounded-2xl border border-[#F0EDE9] flex flex-col justify-center">
+                                                <div className="flex items-center gap-2 mb-3 md:mb-4 text-[#3E3E3E] font-bold text-[8px] md:text-[10px] uppercase tracking-widest">
+                                                    <Icon name="credit-card" size={12} className="opacity-60" /> Guide
+                                                </div>
+                                                <p className="text-[9px] md:text-[11px] leading-relaxed text-[#9A9A9A] mb-3 md:mb-4 font-light">{t.payment}</p>
+                                                <p className="text-[9px] md:text-[10px] italic text-[#8E9775] font-bold">※ {t.note}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-24">
+                            <section>
+                                <h3 className="flex items-center text-[10px] md:text-sm font-bold mb-8 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase">
+                                    <Icon name="camera" size={16} className="mr-2 opacity-30" /> The Spots
+                                </h3>
+                                <div className="space-y-4">
+                                    {currentDay.spots.map((s, idx) => (
+                                        <div key={idx} className="bg-white p-5 md:p-6 rounded-xl md:rounded-2xl border border-[#E8E4E0] shadow-sm group hover:border-[#8E9775]/30 transition-all">
+                                            <div className="flex justify-between items-start mb-2.5">
+                                                <h4 className="text-xs md:text-base font-medium text-[#3E3E3E] group-hover:text-[#8E9775] transition-colors font-serif">{s.name}</h4>
+                                                <span className="text-[8px] md:text-[9px] text-[#9A9A9A] font-bold whitespace-nowrap ml-2">{s.time}</span>
+                                            </div>
+                                            <p className="text-[9px] md:text-[11px] text-[#9A9A9A] font-light leading-relaxed">{s.info}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+
+                            <section>
+                                <h3 className="flex items-center text-[10px] md:text-sm font-bold mb-8 md:mb-10 text-[#3E3E3E] tracking-[0.3em] border-b border-[#E8E4E0] pb-2 md:pb-3 uppercase">
+                                    <Icon name="utensils" size={16} className="mr-2 opacity-30" /> The Palette
+                                </h3>
+                                <div className="space-y-3">
+                                    {currentDay.foods.map((f, idx) => (
+                                        <div key={idx} className="flex items-center gap-4 bg-white p-4 md:p-5 rounded-xl md:rounded-2xl border border-transparent hover:border-[#E8E4E0] transition-all hover:bg-[#F9F7F5] group shadow-sm">
+                                            <span className="text-[8px] md:text-[10px] font-bold text-[#D4CFC7] group-hover:text-[#8E9775]">0{idx + 1}</span>
+                                            <span className="text-[10px] md:text-sm font-light text-[#5C5C5C] tracking-widest leading-tight">
+                                                {renderDescription(f)}
+                                            </span>
+                                        </div>
+                                    ))}
+                                    <div className="mt-8 md:mt-10 p-8 md:p-10 bg-[#FDFCFB] rounded-[1.5rem] md:rounded-[2.5rem] border-2 border-dashed border-[#E8E4E0] text-center">
+                                        <Icon name="coffee" size={20} className="mx-auto mb-3 opacity-30" />
+                                        <p className="text-[9px] md:text-[11px] italic text-[#9A9A9A] tracking-wider">Moments captured in flavors.</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div className="bg-white p-8 md:p-16 rounded-[1.5rem] md:rounded-[3rem] text-center border border-[#E8E4E0] relative group overflow-hidden shadow-sm mb-12">
+                            <div className="absolute top-0 left-0 w-full h-1.5 bg-[#8E9775]/20"></div>
+                            <p className="text-[8px] md:text-[10px] text-[#9A9A9A] mb-3 md:mb-4 uppercase tracking-[0.4em]">Home for the night</p>
+                            <h4 className="text-xl md:text-3xl font-light text-[#3E3E3E] flex items-center justify-center gap-3 md:gap-4 font-serif">
+                                <Icon name="map-pin" size={22} className="text-[#D4CFC7]" /> {currentDay.hotel}
+                            </h4>
+                        </div>
+
+                        <div className="flex justify-between mt-12 md:mt-24 pt-8 md:pt-12 border-t border-[#E8E4E0]">
+                            <button 
+                                disabled={activeDay === 0}
+                                onClick={() => { setActiveDay(prev => prev - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"
+                            >
+                                <Icon name="chevron-left" size={16} /> Previous
+                            </button>
+                            <button 
+                                disabled={activeDay === itineraryData.length - 1}
+                                onClick={() => { setActiveDay(prev => prev + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                className="flex items-center gap-2 md:gap-4 text-[#A0A0A0] hover:text-[#3E3E3E] disabled:opacity-10 transition-all text-[10px] md:text-[12px] tracking-[0.3em] uppercase font-bold"
+                            >
+                                Next <Icon name="chevron-right" size={16} />
+                            </button>
+                        </div>
+                    </main>
+
+                    <footer className="bg-[#3E3E3E] text-[#D4CFC7] py-20 md:py-32 px-6 md:px-12 text-center">
+                        <div className="max-w-xl mx-auto">
+                            <div className="text-[9px] md:text-[11px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Sarah & Johnny</div>
+                            <p className="text-[10px] md:text-[13px] tracking-[0.2em] md:tracking-[0.25em] leading-relaxed mb-10 md:mb-16 opacity-75 uppercase font-light">
+                                Designed with love for a lifelong adventure.<br/>
+                                A collection of quiet moments in the heart of Japan.
+                            </p>
+                            <div className="flex justify-center gap-10 md:gap-14 text-white/10 mb-10 md:mb-16">
+                                <Icon name="waves" size={20} className="hover:text-[#8E9775] transition-colors" /> 
+                                <Icon name="mountain" size={20} className="hover:text-[#8E9775] transition-colors" /> 
+                                <Icon name="sparkles" size={20} className="hover:text-[#8E9775] transition-colors" />
+                            </div>
+                            <p className="text-[7px] md:text-[9px] opacity-30 tracking-[0.3em] md:tracking-[0.4em]">© 2026 HONEYMOON ARCHIVE | FOREVER & ALWAYS</p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
 </html>
