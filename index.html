@@ -2,17 +2,15 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah & Johnny 的 2026 莫蘭迪浪漫散策</title>
-    <!-- 樣式與高品質字體 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Johnny & Sarah's Honeymoon</title>
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;700&family=Noto+Sans+TC:wght@100;300;400;700&display=swap" rel="stylesheet">
-    <!-- React 核心元件 -->
+    <!-- React, Babel, & Lucide Icons -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <!-- Babel 編譯器 -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Lucide 圖示庫 -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -21,12 +19,12 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.05); } }
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
-        .animate-slowZoom { animation: slowZoom 10s ease-out forwards; }
-        .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-        /* 防止手機端點選時出現藍色區塊 */
+        .animate-slowZoom { animation: slowZoom 8s ease-out forwards; }
+        .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         * { -webkit-tap-highlight-color: transparent; }
+        .nav-btn-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="bg-[#FDFCFB]">
@@ -35,14 +33,13 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // 建立一個圖示組件，確保在 CDN 環境下也能穩定顯示
-        const Icon = ({ name, size = 20, className = "" }) => {
+        const Icon = ({ name, size = 18, className = "" }) => {
             useEffect(() => {
                 if (window.lucide) {
                     window.lucide.createIcons();
                 }
             }, [name]);
-            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+            return <i data-lucide={name} style={{ width: size, height: size }} className={`inline-block ${className}`}></i>;
         };
 
         const App = () => {
@@ -71,7 +68,7 @@
                             for (let i = 0; i < splitPart.length; i++) {
                                 newParts.push(splitPart[i]);
                                 if (i < splitPart.length - 1) {
-                                    newParts.push(<span key={keyword + i} className="font-bold text-[#4A5D4E] border-b border-[#A7B09E]/40">{keyword}</span>);
+                                    newParts.push(<span key={keyword + i} className="font-bold text-[#4A5D4E] border-b border-[#A7B09E]/30">{keyword}</span>);
                                 }
                             }
                         } else {
@@ -91,7 +88,7 @@
                         { mode: "N'EX (成田特快)", route: "成田機場(T2) ➔ 東京站", duration: "60 mins", stations: ["空港第 2 航廈", "成田", "佐倉", "四街道", "千葉", "船橋", "錦糸町", "東京站"], price: "¥3,070 (約 NT$645)", payment: "機場 B1 JR 櫃檯劃位，可刷 Visa/MasterCard。", note: "全車指定席，抵達二航後下 B1 辦理即可。" },
                         { mode: "北陸新幹線", route: "東京站 ➔ 輕井澤站", duration: "75 mins", stations: ["東京", "上野", "大宮", "高崎", "安中榛名", "輕井澤"], price: "¥6,020 (約 NT$1,265)", payment: "售票機或 Smart EX APP。", note: "由東京站南轉乘口進入，轉乘時間建議留 20 分鐘。" }
                     ],
-                    description: "Sarah 和 Johnny 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐。不需要奔波，只需將彼此調整到「度假模式」，在森林的呼吸聲中入眠。",
+                    description: "Johnny 和 Sarah 的 2026 蜜月序幕在成田第二航廈拉開。當 N'EX 緩緩駛向東京，窗外的色彩逐漸轉為淡雅的霧面綠。入住 Indigo 飯店後，稍微安頓行李，感受木質與現代設計的交織。今晚我們預約了 20:15 的飯店餐廳，在輕井澤的涼爽夜風中，享受第一頓正式的蜜月晚餐。不需要奔波，只需將彼此調整到「度假模式」，在森林的呼吸聲中入眠。",
                     spots: [
                         { name: "成田機場第二航廈", info: "抵達並辦理 N'EX 乘車手續。", time: "15:05 落地" },
                         { name: "東京站紅磚區", info: "文藝復興式建築，東京的永恆經典。", time: "16:30" },
@@ -161,7 +158,7 @@
                         { mode: "東海巴士 (元箱根港線)", route: "三島站南口 ➔ 元箱根港", duration: "50 mins", stations: ["三島站南口", "三島 Skywalk", "山中城跡", "箱根峠", "元箱根港"], price: "¥1,100 (約 NT$231)", payment: "Suica / 現金。", note: "飯店門口站牌上車，直達蘆之湖畔。" },
                         { mode: "箱根海賊船", route: "元箱根港 ➔ 桃源台", duration: "30 mins", stations: ["元箱根港", "箱根町港", "桃源台港"], price: "¥1,200 (約 NT$250)", payment: "自動售票機。", note: "二樓甲板是拍富士山的絕佳位置。" }
                     ],
-                    description: "今日是山與海的對話。蘆之湖的湖水藍得深邃，箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Sarah 和 Johnny 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆溫熱的黑蛋，據說能延壽七年，也就是能再陪彼此走過更多歲月。這是一場日式莊嚴與浪漫童話的結合。",
+                    description: "今日是山與海的對話。蘆之湖的湖水藍得深邃，箱根神社的紅色鳥居在水中屹立，呈現出一種靜謐的力量。搭上華麗的海賊船，Johnny 和 Sarah 並肩站在甲板上，任理由湖風拂面。隨後搭乘空中纜車直達大涌谷，看著地底湧出的硫磺白煙，吃一顆溫熱的黑蛋，據說能延壽七年，也就是能再陪彼此走過更多歲月。這是一場日式莊嚴與浪漫童話的結合。",
                     spots: [
                         { name: "箱根神社 水中鳥居", info: "水中紅色鳥居，必拍地標。", time: "10:30" },
                         { name: "蘆之湖海賊船", info: "華麗的歐式船隻，體驗海賊浪漫。", time: "12:00" },
@@ -245,7 +242,7 @@
                     day: 10, date: "2026.06.17 Wed", title: "童心：森林迷宮", theme: "吉卜力 ➔ HARBS ➔ 吉祥寺",
                     image: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     transport: [
-                        { mode: "JR 京濱東北線 + 中央線快速", route: "大井町 ➔ 品川 ➔ 新宿 ➔ 三鷹", duration: "50 mins", stations: ["大井町", "新宿", "吉祥寺", "三鷹"], price: "¥580 (約 NT$122)", payment: "Suica。", note: "在新宿站注意中央線(橙色標誌)的方向。" }
+                        { mode: "JR 京濱東北線 + 中央線快速", route: "大井町 ➔ 品長 ➔ 新宿 ➔ 三鷹", duration: "50 mins", stations: ["大井町", "新宿", "吉祥寺", "三鷹"], price: "¥580 (約 NT$122)", payment: "Suica。", note: "在新宿站注意中央線 (橙色) 的方向。" }
                     ],
                     description: "今日走進宮崎駿的奇幻想像。吉卜力美術館不只是展覽，更是一個巨大的藝術裝置。隨後漫步到全東京最宜居的吉祥寺，這裡的步調緩慢而有質感。Sarah 期待已久的 HARBS 水果千層，就在這裡優雅地等待著。每一層奶油與新鮮水果的堆疊，都是職人的堅持。Johnny 可以陪著 Sarah 在井之頭公園看著池邊的新綠。吉祥寺的雜貨小店與這座公園，是這趟蜜月中溫柔而美好的插曲。",
                     spots: [
@@ -307,7 +304,7 @@
                         />
                         <div className="relative z-10 text-center text-white px-4 md:px-6">
                             <div className="mb-3 md:mb-4 tracking-[0.4em] text-[8px] md:text-[10px] uppercase opacity-70">The 2026 Honeymoon Journal</div>
-                            <h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow">SARAH & JOHNNY</h1>
+                            <h1 className="text-2xl md:text-6xl font-light mb-3 md:mb-4 tracking-widest font-serif leading-tight text-shadow">JOHNNY & SARAH</h1>
                             <p className="text-[10px] md:text-base font-light tracking-[0.2em] md:tracking-[0.3em] opacity-90 uppercase text-shadow">Japan. Romantic. Zen.</p>
                             <div className="mt-8 md:mt-10 flex justify-center gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-widest">
                                 <span className="border-b border-white/40 pb-1">06.08</span>
@@ -326,12 +323,12 @@
                                 <button
                                     key={idx}
                                     onClick={() => { setActiveDay(idx); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                                    className={`flex-shrink-0 flex flex-col items-center transition-all duration-300 min-w-[40px] md:min-w-[48px] py-2 ${
+                                    className={`flex-shrink-0 flex flex-col items-center transition-all duration-300 min-w-[45px] md:min-w-[55px] py-2 ${
                                         activeDay === idx ? 'text-[#3E3E3E] scale-110' : 'text-[#A0A0A0] hover:text-[#3E3E3E]'
                                     }`}
                                 >
                                     <span className="text-[7px] md:text-[9px] tracking-tighter mb-0.5 opacity-60">DAY</span>
-                                    <span className={`text-xs md:text-sm font-bold border-b-2 ${activeDay === idx ? 'border-[#8E9775] text-[#8E9775]' : 'border-transparent'}`}>
+                                    <span className={`text-sm md:text-base font-bold border-b-2 ${activeDay === idx ? 'border-[#8E9775] text-[#8E9775]' : 'border-transparent'}`}>
                                         {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                     </span>
                                 </button>
@@ -344,7 +341,7 @@
                             <div className="text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] text-[#9A9A9A] uppercase mb-3 md:mb-4">{currentDay.date}</div>
                             <h2 className="text-xl md:text-4xl font-light text-[#3E3E3E] mb-4 md:mb-6 tracking-wide font-serif leading-snug">{currentDay.title}</h2>
                             <div className="w-8 md:w-10 h-[1px] bg-[#D4CFC7] mx-auto mb-4 md:mb-6"></div>
-                            <p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest">{currentDay.theme}</p>
+                            <p className="text-[#8E9775] text-xs md:text-base font-light tracking-widest uppercase">{currentDay.theme}</p>
                         </div>
 
                         <section className="mb-16 md:mb-24">
@@ -371,7 +368,7 @@
                                                 
                                                 <button 
                                                     onClick={() => toggleStations(`${activeDay}-${idx}`)}
-                                                    className="flex items-center gap-2 text-[8px] md:text-[10px] text-[#9A9A9A] hover:text-[#3E3E3E] transition-colors mb-5 md:mb-6 font-bold tracking-[0.1em]"
+                                                    className="flex items-center gap-2 text-[9px] md:text-[10px] text-[#9A9A9A] hover:text-[#3E3E3E] transition-colors mb-5 md:mb-6 font-bold tracking-[0.1em]"
                                                 >
                                                     <Icon name={showStations[`${activeDay}-${idx}`] ? "chevron-up" : "chevron-down"} size={10} />
                                                     經過站點 ({t.stations.length})
@@ -481,7 +478,7 @@
 
                     <footer className="bg-[#3E3E3E] text-[#D4CFC7] py-20 md:py-32 px-6 md:px-12 text-center">
                         <div className="max-w-xl mx-auto">
-                            <div className="text-[9px] md:text-[11px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Sarah & Johnny</div>
+                            <div className="text-[10px] tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 opacity-60 uppercase font-bold text-[#A7B09E]">Johnny & Sarah</div>
                             <p className="text-[10px] md:text-[13px] tracking-[0.2em] md:tracking-[0.25em] leading-relaxed mb-10 md:mb-16 opacity-75 uppercase font-light">
                                 Designed with love for a lifelong adventure.<br/>
                                 A collection of quiet moments in the heart of Japan.
